@@ -1,8 +1,9 @@
-
+import lodash from 'lodash';
 import Vue from 'vue';
-import VueRouter from 'vue-router'
+import VueRouter from 'vue-router';
+import Form from './utilities/Form';
 
-window._ = require('lodash');
+window._ = lodash;
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -43,3 +44,5 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 window.Vue = Vue;
 Vue.use(VueRouter);
+
+window.Form = Form;

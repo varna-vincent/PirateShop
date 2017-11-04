@@ -16,9 +16,14 @@ let routes = [
 	{
 		path: '/addproduct',
 		component: require('./components/admin/AddProduct')
+	},
+	{
+		path: '/shop',
+		component: require('./components/Shop')
 	}
 ];
 
 export default new VueRouter({
-	routes
+	routes,
+	linkActiveClass: 'active'
 });

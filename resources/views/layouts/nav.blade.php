@@ -43,10 +43,8 @@
         <div class="navbar-collapse collapse" id="navigation">
 
             <ul class="nav navbar-nav navbar-left">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li class="dropdown yamm-fw">
-                    <router-link to="/shop">Shop </router-link>
-                </li>
+                <li class="active"><router-link to="/" exact>Home</router-link></li>
+                <li class="dropdown yamm-fw"><router-link to="/shop" exact>Shop </router-link></li>
             </ul>
 
         </div>
@@ -56,7 +54,7 @@
             <div class="navbar-collapse collapse right" id="user-services">
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
-                        <li><router-link to="/register">Login | Register</router-link></li>
+                        <li><router-link to="/register" exact>Login | Register</router-link></li>
                     @else
                         <li class="dropdown yamm-fw">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">{{ Auth::user()->name }} <b class="caret"></b></a>

@@ -3750,7 +3750,7 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(13);
-module.exports = __webpack_require__(67);
+module.exports = __webpack_require__(70);
 
 
 /***/ }),
@@ -45635,10 +45635,14 @@ var routes = [{
 }, {
 	path: '/addproduct',
 	component: __webpack_require__(58)
+}, {
+	path: '/shop',
+	component: __webpack_require__(67)
 }];
 
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
-	routes: routes
+	routes: routes,
+	linkActiveClass: 'active'
 }));
 
 /***/ }),
@@ -48866,6 +48870,409 @@ if (false) {
 
 /***/ }),
 /* 67 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(68)
+/* template */
+var __vue_template__ = __webpack_require__(69)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Shop.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-563bdea6", Component.options)
+  } else {
+    hotAPI.reload("data-v-563bdea6", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 68 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	data: function data() {
+		return {
+			products: []
+		};
+	},
+	created: function created() {
+		this.loadProducts();
+	},
+
+	methods: {
+		loadProducts: function loadProducts() {
+			var _this = this;
+
+			axios.get('products').then(function (response) {
+				return _this.products = response.data;
+			});
+		},
+		loadBlogsByType: function loadBlogsByType(tag) {
+			var _this2 = this;
+
+			axios.get('tags/' + tag).then(function (response) {
+				return _this2.blogs = response.data.posts;
+			});
+		}
+	}
+});
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { attrs: { id: "content" } }, [
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "row products" },
+          _vm._l(_vm.products, function(product) {
+            return _c("div", { staticClass: "col-md-3 col-sm-4" }, [
+              _c("div", { staticClass: "product" }, [
+                _vm._m(1, true),
+                _vm._v(" "),
+                _vm._m(2, true),
+                _vm._v(" "),
+                _c("div", { staticClass: "text" }, [
+                  _c("h3", [
+                    _c("a", { attrs: { href: "detail.html" } }, [
+                      _vm._v(_vm._s(product.name))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "price" }, [
+                    _vm._v("$" + _vm._s(product.price))
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(3, true)
+                ])
+              ])
+            ])
+          })
+        ),
+        _vm._v(" "),
+        _vm._m(4)
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "box info-bar" }, [
+      _c("div", { staticClass: "row" }, [
+        _c(
+          "div",
+          { staticClass: "col-sm-12 col-md-4 form-inline products-sort-by" },
+          [
+            _c("strong", [_vm._v("Type")]),
+            _vm._v(" "),
+            _c(
+              "select",
+              { staticClass: "form-control", attrs: { name: "sort-by" } },
+              [
+                _c("option", { attrs: { value: "DVD" } }, [_vm._v("DVD")]),
+                _vm._v(" "),
+                _c("option", { attrs: { value: "BluRay" } }, [_vm._v("BluRay")])
+              ]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-sm-12 col-md-8  products-number-sort" }, [
+          _c("div", { staticClass: "row" }, [
+            _c("form", { staticClass: "form-inline" }, [
+              _c("div", { staticClass: "col-md-6 col-sm-6" }, [
+                _c("div", { staticClass: "products-number" }, [
+                  _c("strong", [_vm._v("Show")]),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-default btn-sm btn-primary",
+                      attrs: { href: "#" }
+                    },
+                    [_vm._v("12")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-default btn-sm",
+                      attrs: { href: "#" }
+                    },
+                    [_vm._v("24")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-default btn-sm",
+                      attrs: { href: "#" }
+                    },
+                    [_vm._v("All")]
+                  ),
+                  _vm._v(" products\n                                        ")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-md-6 col-sm-6" }, [
+                _c("div", { staticClass: "products-sort-by" }, [
+                  _c("strong", [_vm._v("Sort by")]),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    { staticClass: "form-control", attrs: { name: "sort-by" } },
+                    [
+                      _c("option", [_vm._v("Price")]),
+                      _vm._v(" "),
+                      _c("option", [_vm._v("Name")]),
+                      _vm._v(" "),
+                      _c("option", [_vm._v("Sales first")])
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flip-container" }, [
+      _c("div", { staticClass: "flipper" }, [
+        _c("div", { staticClass: "front" }, [
+          _c("a", { attrs: { href: "detail.html" } }, [
+            _c("img", {
+              staticClass: "img-responsive",
+              attrs: { src: "img/product1.jpg", alt: "" }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "back" }, [
+          _c("a", { attrs: { href: "detail.html" } }, [
+            _c("img", {
+              staticClass: "img-responsive",
+              attrs: { src: "img/product1_2.jpg", alt: "" }
+            })
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      { staticClass: "invisible", attrs: { href: "detail.html" } },
+      [
+        _c("img", {
+          staticClass: "img-responsive",
+          attrs: { src: "img/product1.jpg", alt: "" }
+        })
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "buttons" }, [
+      _c(
+        "a",
+        { staticClass: "btn btn-default", attrs: { href: "detail.html" } },
+        [_vm._v("View detail")]
+      ),
+      _vm._v(" "),
+      _c(
+        "a",
+        { staticClass: "btn btn-primary", attrs: { href: "basket.html" } },
+        [_c("i", { staticClass: "fa fa-shopping-cart" }), _vm._v("Add to cart")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "pages" }, [
+      _c("p", { staticClass: "loadMore" }, [
+        _c(
+          "a",
+          { staticClass: "btn btn-primary btn-lg", attrs: { href: "#" } },
+          [_c("i", { staticClass: "fa fa-chevron-down" }), _vm._v(" Load more")]
+        )
+      ]),
+      _vm._v(" "),
+      _c("ul", { staticClass: "pagination" }, [
+        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("«")])]),
+        _vm._v(" "),
+        _c("li", { staticClass: "active" }, [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("1")])
+        ]),
+        _vm._v(" "),
+        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("2")])]),
+        _vm._v(" "),
+        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("3")])]),
+        _vm._v(" "),
+        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("4")])]),
+        _vm._v(" "),
+        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("5")])]),
+        _vm._v(" "),
+        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("»")])])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-563bdea6", module.exports)
+  }
+}
+
+/***/ }),
+/* 70 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

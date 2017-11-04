@@ -129,10 +129,16 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-12">
+                    <div class="col-sm-6">
                         <div class="form-group">
                             <label for="language">Language</label>
                             <input type="text" class="form-control" v-model="form.language">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea rows="4" class="form-control" v-model="form.description"></textarea>
                         </div>
                     </div>
                 </div>
@@ -164,7 +170,8 @@
 					rated: '',
 					studio: '',
 					format: '',
-					language: ''
+					language: '',
+                    description: ''
 				})
 			}
 		},

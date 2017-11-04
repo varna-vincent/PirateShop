@@ -20,6 +20,12 @@ let routes = [
 	{
 		path: '/shop',
 		component: require('./components/Shop')
+	},
+	{
+		path: '/products/:id',
+		name: 'product',
+		component: require('./components/ProductDetails'),
+		props: true
 	}
 ];
 

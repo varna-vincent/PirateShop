@@ -26,6 +26,7 @@ class CreateProductsTable extends Migration
             $table->text('producers')->nullable();
             $table->string('format')->nullable();
             $table->text('language')->nullable();
+            $table->text('description')->nullable();
             $table->string('subtitles')->nullable();
             $table->string('rated')->nullable();
             $table->string('studio')->nullable();

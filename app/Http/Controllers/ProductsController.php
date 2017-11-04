@@ -9,7 +9,8 @@ class ProductsController extends Controller
 {
     public function __construct() {
 
-        $this->middleware('auth')->except(['index','show', 'update']);
+        $this->middleware('auth')->except(['index','show']);
+        $this->middleware('admin')->only('store');
     }
 
     /**
@@ -62,7 +63,8 @@ class ProductsController extends Controller
                                 'subtitles' => $request->subtitles,
                                 'rated' => $request->rated,
                                 'studio' => $request->studio,
-                                'runtime' => $request->runtime]);
+                                'runtime' => $request->runtime,
+                                'description' => $request->description ]);
 
         return $product;
     }
@@ -75,7 +77,7 @@ class ProductsController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return $product;
     }
 
     /**

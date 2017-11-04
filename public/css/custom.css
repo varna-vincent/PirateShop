@@ -1,1 +1,17 @@
 /** Your theme modifications here **/
+.product-details p {
+	margin-bottom: 10px;
+}
+
+.oldprice {
+	text-decoration: line-through;
+	color: #CCC;
+}
+
+.discount {
+	color: red;
+}
+
+.pad-5 {
+	padding: 5px;
+}

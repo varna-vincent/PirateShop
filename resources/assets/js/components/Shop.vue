@@ -41,25 +41,25 @@
                             <div class="flip-container">
                                 <div class="flipper">
                                     <div class="front">
-                                        <a href="detail.html">
+                                        <router-link :to="{ name: 'product', params: { id: product.id }}">
                                             <img src="img/product1.jpg" alt="" class="img-responsive">
-                                        </a>
+                                        </router-link>
                                     </div>
                                     <div class="back">
-                                        <a href="detail.html">
+                                        <router-link :to="{ name: 'product', params: { id: product.id }}">
                                             <img src="img/product1_2.jpg" alt="" class="img-responsive">
-                                        </a>
+                                        </router-link>
                                     </div>
                                 </div>
                             </div>
-                            <a href="detail.html" class="invisible">
+                            <router-link :to="{ name: 'product', params: { id: product.id }}" class="invisible">
                                 <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
+                            </router-link>
                             <div class="text">
-                                <h3><a href="detail.html">{{product.name}}</a></h3>
+                                <h3><router-link :to="{ name: 'product', params: { id: product.id }}">{{product.name}}</router-link></h3>
                                 <p class="price">${{product.price}}</p>
                                 <p class="buttons">
-                                    <a href="detail.html" class="btn btn-default">View detail</a>
+                                    <router-link :to="{ name: 'product', params: { id: product.id }}" class="btn btn-default">View detail</router-link>
                                     <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </p>
                             </div>

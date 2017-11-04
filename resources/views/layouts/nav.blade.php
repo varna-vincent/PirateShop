@@ -45,79 +45,7 @@
             <ul class="nav navbar-nav navbar-left">
                 <li class="active"><a href="index.html">Home</a></li>
                 <li class="dropdown yamm-fw">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">SHOP </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <div class="yamm-content">
-                                <div class="row">
-                                    <div class="col-sm-3">
-                                        <h5>Clothing</h5>
-                                        <ul>
-                                            <li><a href="category.html">T-shirts</a>
-                                            </li>
-                                            <li><a href="category.html">Shirts</a>
-                                            </li>
-                                            <li><a href="category.html">Pants</a>
-                                            </li>
-                                            <li><a href="category.html">Accessories</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <h5>Shoes</h5>
-                                        <ul>
-                                            <li><a href="category.html">Trainers</a>
-                                            </li>
-                                            <li><a href="category.html">Sandals</a>
-                                            </li>
-                                            <li><a href="category.html">Hiking shoes</a>
-                                            </li>
-                                            <li><a href="category.html">Casual</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <h5>Accessories</h5>
-                                        <ul>
-                                            <li><a href="category.html">Trainers</a>
-                                            </li>
-                                            <li><a href="category.html">Sandals</a>
-                                            </li>
-                                            <li><a href="category.html">Hiking shoes</a>
-                                            </li>
-                                            <li><a href="category.html">Casual</a>
-                                            </li>
-                                            <li><a href="category.html">Hiking shoes</a>
-                                            </li>
-                                            <li><a href="category.html">Casual</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <h5>Featured</h5>
-                                        <ul>
-                                            <li><a href="category.html">Trainers</a>
-                                            </li>
-                                            <li><a href="category.html">Sandals</a>
-                                            </li>
-                                            <li><a href="category.html">Hiking shoes</a>
-                                            </li>
-                                        </ul>
-                                        <h5>Looks and trends</h5>
-                                        <ul>
-                                            <li><a href="category.html">Trainers</a>
-                                            </li>
-                                            <li><a href="category.html">Sandals</a>
-                                            </li>
-                                            <li><a href="category.html">Hiking shoes</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.yamm-content -->
-                        </li>
-                    </ul>
+                    <router-link to="/shop">Shop </router-link>
                 </li>
             </ul>
 
@@ -141,6 +69,13 @@
                                                 <ul>
                                                     <li><a href="category.html">Your Orders</a></li>
                                                 </ul>
+                                                @if (Auth::user()->isAdmin())
+                                                <h5>PRODUCTS</h5>
+                                                <ul>
+                                                    <li><router-link to="/addproduct">Add Products</router-link></li>
+                                                    <li><a href="category.html">List Products</a></li>
+                                                </ul>
+                                                @endif
                                             </div>
                                             <div class="col-sm-3">
                                                 <h5>ADDRESSES</h5>

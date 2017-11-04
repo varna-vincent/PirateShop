@@ -25,7 +25,7 @@
       <!-- your stylesheet with modifications -->
       <link href="css/custom.css" rel="stylesheet">
       <script src="js/respond.min.js"></script>
-      <link rel="shortcut icon" href="favicon.png">
+      <link rel="shortcut icon" href="img/favicon.png">
       <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),

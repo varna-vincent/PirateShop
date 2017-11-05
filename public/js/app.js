@@ -49052,10 +49052,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	data: function data() {
 		return {
+			productType: '',
 			products: []
 		};
 	},
@@ -49064,6 +49066,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	},
 
 	methods: {
+		getByType: function getByType() {
+			this.productType === 'All' ? this.loadProducts() : this.loadProductsByType();
+		},
 		loadProducts: function loadProducts() {
 			var _this = this;
 
@@ -49071,12 +49076,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				return _this.products = response.data;
 			});
 		},
-		loadBlogsByType: function loadBlogsByType(tag) {
+		loadProductsByType: function loadProductsByType() {
 			var _this2 = this;
 
-			axios.get('tags/' + tag).then(function (response) {
-				return _this2.blogs = response.data.posts;
+			axios.get('products', {
+				params: {
+					type: this.productType
+				}
+			}).then(function (response) {
+				return _this2.products = response.data;
 			});
+		},
+		newPrice: function newPrice(product) {
+			return parseFloat(product.price) - parseFloat(product.price) * parseInt(product.discount) / 100;
 		}
 	}
 });
@@ -49092,7 +49104,64 @@ var render = function() {
   return _c("div", { attrs: { id: "content" } }, [
     _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "col-md-12" }, [
-        _vm._m(0),
+        _c("div", { staticClass: "box info-bar" }, [
+          _c("div", { staticClass: "row" }, [
+            _c(
+              "div",
+              {
+                staticClass: "col-sm-12 col-md-4 form-inline products-sort-by"
+              },
+              [
+                _c("strong", [_vm._v("Type")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.productType,
+                        expression: "productType"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { name: "sort-by" },
+                    on: {
+                      change: [
+                        function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.productType = $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        },
+                        _vm.getByType
+                      ]
+                    }
+                  },
+                  [
+                    _c("option", [_vm._v("All")]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "DVD" } }, [_vm._v("DVD")]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "BluRay" } }, [
+                      _vm._v("BluRay")
+                    ])
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _vm._m(0)
+          ])
+        ]),
         _vm._v(" "),
         _c(
           "div",
@@ -49194,7 +49263,7 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c("p", { staticClass: "price" }, [
-                      _vm._v("$" + _vm._s(product.price))
+                      _vm._v("$" + _vm._s(_vm.newPrice(product)))
                     ]),
                     _vm._v(" "),
                     _c(
@@ -49237,85 +49306,67 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "box info-bar" }, [
-      _c("div", { staticClass: "row" }, [
-        _c(
-          "div",
-          { staticClass: "col-sm-12 col-md-4 form-inline products-sort-by" },
-          [
-            _c("strong", [_vm._v("Type")]),
-            _vm._v(" "),
-            _c(
-              "select",
-              { staticClass: "form-control", attrs: { name: "sort-by" } },
-              [
-                _c("option", { attrs: { value: "DVD" } }, [_vm._v("DVD")]),
+    return _c(
+      "div",
+      { staticClass: "col-sm-12 col-md-8  products-number-sort" },
+      [
+        _c("div", { staticClass: "row" }, [
+          _c("form", { staticClass: "form-inline" }, [
+            _c("div", { staticClass: "col-md-6 col-sm-6" }, [
+              _c("div", { staticClass: "products-number" }, [
+                _c("strong", [_vm._v("Show")]),
                 _vm._v(" "),
-                _c("option", { attrs: { value: "BluRay" } }, [_vm._v("BluRay")])
-              ]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "col-sm-12 col-md-8  products-number-sort" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("form", { staticClass: "form-inline" }, [
-              _c("div", { staticClass: "col-md-6 col-sm-6" }, [
-                _c("div", { staticClass: "products-number" }, [
-                  _c("strong", [_vm._v("Show")]),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-default btn-sm btn-primary",
-                      attrs: { href: "#" }
-                    },
-                    [_vm._v("12")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-default btn-sm",
-                      attrs: { href: "#" }
-                    },
-                    [_vm._v("24")]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-default btn-sm",
-                      attrs: { href: "#" }
-                    },
-                    [_vm._v("All")]
-                  ),
-                  _vm._v(" products\n                                        ")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-6 col-sm-6" }, [
-                _c("div", { staticClass: "products-sort-by" }, [
-                  _c("strong", [_vm._v("Sort by")]),
-                  _vm._v(" "),
-                  _c(
-                    "select",
-                    { staticClass: "form-control", attrs: { name: "sort-by" } },
-                    [
-                      _c("option", [_vm._v("Price")]),
-                      _vm._v(" "),
-                      _c("option", [_vm._v("Name")]),
-                      _vm._v(" "),
-                      _c("option", [_vm._v("Sales first")])
-                    ]
-                  )
-                ])
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn btn-default btn-sm btn-primary",
+                    attrs: { href: "#" }
+                  },
+                  [_vm._v("12")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn btn-default btn-sm",
+                    attrs: { href: "#" }
+                  },
+                  [_vm._v("24")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn btn-default btn-sm",
+                    attrs: { href: "#" }
+                  },
+                  [_vm._v("All")]
+                ),
+                _vm._v(" products\n                                        ")
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-6 col-sm-6" }, [
+              _c("div", { staticClass: "products-sort-by" }, [
+                _c("strong", [_vm._v("Sort by")]),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  { staticClass: "form-control", attrs: { name: "sort-by" } },
+                  [
+                    _c("option", [_vm._v("Price")]),
+                    _vm._v(" "),
+                    _c("option", [_vm._v("Name")]),
+                    _vm._v(" "),
+                    _c("option", [_vm._v("Sales first")])
+                  ]
+                )
               ])
             ])
           ])
         ])
-      ])
-    ])
+      ]
+    )
   },
   function() {
     var _vm = this
@@ -49729,6 +49780,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: ['id'],
@@ -49768,50 +49822,100 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "content" } }, [
     _c("div", { staticClass: "container" }, [
-      _vm._m(0),
+      _c("div", { staticClass: "col-md-3" }, [
+        _c("div", { staticClass: "panel panel-default sidebar-menu" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "panel-body" }, [
+            _c(
+              "ul",
+              { staticClass: "nav nav-pills nav-stacked category-menu" },
+              [
+                _c("li", [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("ul", [
+                    _c(
+                      "li",
+                      [
+                        _c("router-link", { attrs: { to: "/shop" } }, [
+                          _vm._v("All")
+                        ])
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _vm._m(2),
+                    _vm._v(" "),
+                    _vm._m(3)
+                  ])
+                ])
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(4)
+      ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-9" }, [
         _c("div", { staticClass: "row", attrs: { id: "productMain" } }, [
-          _vm._m(1),
+          _vm._m(5),
           _vm._v(" "),
           _c("div", { staticClass: "col-sm-6" }, [
             _c("div", { staticClass: "box product-details" }, [
-              _c("h1", { staticClass: "text-center" }, [
-                _vm._v(_vm._s(_vm.product.name))
-              ]),
+              _vm.product.name
+                ? _c("h1", { staticClass: "text-center" }, [
+                    _vm._v(_vm._s(_vm.product.name))
+                  ])
+                : _vm._e(),
               _vm._v(" "),
-              _vm._m(2),
+              _vm.product.type
+                ? _c("p", { staticClass: "text-center" }, [
+                    _vm._v(_vm._s(_vm.product.type))
+                  ])
+                : _vm._e(),
               _vm._v(" "),
-              _c("p", [
-                _vm._v("Was: "),
-                _c("span", { staticClass: "oldprice" }, [
-                  _vm._v("$" + _vm._s(_vm.product.price) + " ")
-                ])
-              ]),
+              _vm._m(6),
               _vm._v(" "),
-              _c("p", [
-                _vm._v("You save: $" + _vm._s(_vm.discount()) + " "),
-                _c("span", { staticClass: "discount" }, [
-                  _vm._v("(" + _vm._s(_vm.product.discount) + "% OFF)")
-                ])
-              ]),
+              _vm.product.price
+                ? _c("p", [
+                    _vm._v("Was: "),
+                    _c("span", { staticClass: "oldprice" }, [
+                      _vm._v("$" + _vm._s(_vm.product.price) + " ")
+                    ])
+                  ])
+                : _vm._e(),
               _vm._v(" "),
-              _c("p", { staticClass: "price" }, [
-                _vm._v("$" + _vm._s(_vm.newPrice()))
-              ]),
+              _vm.product.discount
+                ? _c("p", [
+                    _vm._v("You save: $" + _vm._s(_vm.discount()) + " "),
+                    _c("span", { staticClass: "discount" }, [
+                      _vm._v("(" + _vm._s(_vm.product.discount) + "% OFF)")
+                    ])
+                  ])
+                : _vm._e(),
               _vm._v(" "),
-              _c("h6", { staticClass: "text-center" }, [
-                _vm._v(
-                  "Only " +
-                    _vm._s(_vm.product.available_count) +
-                    " left! Hurry!"
-                )
-              ]),
+              _vm.product.price
+                ? _c("p", { staticClass: "price" }, [
+                    _vm._v("$" + _vm._s(_vm.newPrice()))
+                  ])
+                : _vm._e(),
               _vm._v(" "),
-              _vm._m(3)
+              _vm.product.available_count
+                ? _c("h6", { staticClass: "text-center" }, [
+                    _vm._v(
+                      "Only " +
+                        _vm._s(_vm.product.available_count) +
+                        " left! Hurry!"
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm._m(7)
             ]),
             _vm._v(" "),
-            _vm._m(4)
+            _vm._m(8)
           ])
         ]),
         _vm._v(" "),
@@ -49822,6 +49926,12 @@ var render = function() {
           _vm.product.description
             ? _c("blockquote", [
                 _c("p", [_c("em", [_vm._v(_vm._s(_vm.product.description))])])
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.product.type
+            ? _c("p", { staticClass: "text-center" }, [
+                _vm._v(_vm._s(_vm.product.type))
               ])
             : _vm._e(),
           _vm._v(" "),
@@ -49904,12 +50014,12 @@ var render = function() {
           _vm._v(" "),
           _c("hr"),
           _vm._v(" "),
-          _vm._m(5)
+          _vm._m(9)
         ]),
         _vm._v(" "),
-        _vm._m(6),
+        _vm._m(10),
         _vm._v(" "),
-        _vm._m(7)
+        _vm._m(11)
       ])
     ])
   ])
@@ -49919,43 +50029,45 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-3" }, [
-      _c("div", { staticClass: "panel panel-default sidebar-menu" }, [
-        _c("div", { staticClass: "panel-heading" }, [
-          _c("h3", { staticClass: "panel-title" }, [_vm._v("Categories")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "panel-body" }, [
-          _c("ul", { staticClass: "nav nav-pills nav-stacked category-menu" }, [
-            _c("li", [
-              _c("a", { attrs: { href: "category.html" } }, [
-                _vm._v("Type "),
-                _c("span", { staticClass: "badge pull-right" })
-              ]),
-              _vm._v(" "),
-              _c("ul", [
-                _c("li", [
-                  _c("a", { attrs: { href: "category.html" } }, [_vm._v("DVD")])
-                ]),
-                _vm._v(" "),
-                _c("li", [
-                  _c("a", { attrs: { href: "category.html" } }, [
-                    _vm._v("BluRay")
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "banner" }, [
-        _c("a", { attrs: { href: "#" } }, [
-          _c("img", {
-            staticClass: "img-responsive",
-            attrs: { src: "img/banner.jpg", alt: "sales 2014" }
-          })
-        ])
+    return _c("div", { staticClass: "panel-heading" }, [
+      _c("h3", { staticClass: "panel-title" }, [_vm._v("Categories")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("a", { attrs: { href: "category.html" } }, [
+      _vm._v("Type "),
+      _c("span", { staticClass: "badge pull-right" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "category.html" } }, [_vm._v("DVD")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", { attrs: { href: "category.html" } }, [_vm._v("BluRay")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "banner" }, [
+      _c("a", { attrs: { href: "#" } }, [
+        _c("img", {
+          staticClass: "img-responsive",
+          attrs: { src: "img/banner.jpg", alt: "sales 2014" }
+        })
       ])
     ])
   },
@@ -49990,7 +50102,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "goToDescription" }, [
       _c("a", { staticClass: "scroll-to", attrs: { href: "#details" } }, [
-        _vm._v("Scroll to product details")
+        _vm._v("Scroll to product description")
       ])
     ])
   },

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Repositories\Products;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -18,9 +19,9 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Products $products, Request $request)
     {
-        return Product::latest()->get();
+        return $products->all();
     }
 
     /**

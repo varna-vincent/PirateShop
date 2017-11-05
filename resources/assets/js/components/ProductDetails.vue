@@ -15,6 +15,7 @@
                             <li>
                                 <a href="category.html">Type <span class="badge pull-right"></span></a>
                                 <ul>
+                                    <li><router-link to="/shop">All</router-link></li>
                                     <li><a href="category.html">DVD</a></li>
                                     <li><a href="category.html">BluRay</a></li>
                                 </ul>
@@ -54,13 +55,14 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="box product-details">
-                            <h1 class="text-center">{{ product.name }}</h1>
+                            <h1 v-if="product.name" class="text-center">{{ product.name }}</h1>
+                            <p v-if="product.type" class="text-center">{{ product.type }}</p>
                             <p class="goToDescription"><a href="#details" class="scroll-to">Scroll to product description</a>
                             </p>
-                            <p>Was: <span class="oldprice">${{ product.price }} </span></p>
-                            <p>You save: ${{ discount() }} <span class="discount">({{ product.discount }}% OFF)</span></p>
-                            <p class="price">${{ newPrice() }}</p>
-                            <h6 class="text-center">Only {{ product.available_count }} left! Hurry!</h6>
+                            <p v-if="product.price">Was: <span class="oldprice">${{ product.price }} </span></p>
+                            <p v-if="product.discount">You save: ${{ discount() }} <span class="discount">({{ product.discount }}% OFF)</span></p>
+                            <p v-if="product.price" class="price">${{ newPrice() }}</p>
+                            <h6 v-if="product.available_count" class="text-center">Only {{ product.available_count }} left! Hurry!</h6>
 
                             <p class="text-center buttons pad-5">
                                 <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a> 
@@ -95,6 +97,7 @@
                             <p><em>{{ product.description }}</em>
                             </p>
                         </blockquote>
+                        <p v-if="product.type" class="text-center">{{ product.type }}</p>
                         <p v-if="product.actors"><strong>Actors : </strong> {{ product.actors }}</p>
                         <p v-if="product.directors"><strong>Directors : </strong> {{ product.directors }}</p>
                         <p v-if="product.writers"><strong>Writes : </strong> {{ product.writers }}</p>

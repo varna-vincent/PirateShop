@@ -6,7 +6,8 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-4 form-inline products-sort-by">
                             <strong>Type</strong>
-                            <select name="sort-by" class="form-control">
+                            <select v-model="productType" name="sort-by" @change="getByType" class="form-control">
+                                <option>All</option>
                                 <option value="DVD">DVD</option>
                                 <option value="BluRay">BluRay</option>
                             </select>
@@ -57,7 +58,7 @@
                             </router-link>
                             <div class="text">
                                 <h3><router-link :to="{ name: 'product', params: { id: product.id }}">{{product.name}}</router-link></h3>
-                                <p class="price">${{product.price}}</p>
+                                <p class="price">${{newPrice(product)}}</p>
                                 <p class="buttons">
                                     <router-link :to="{ name: 'product', params: { id: product.id }}" class="btn btn-default">View detail</router-link>
                                     <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -90,6 +91,7 @@
 	export default {
 		data() {
 			return {
+                productType: '',
 				products: []
 			}
 		},
@@ -97,12 +99,22 @@
 			this.loadProducts();
 		},
 		methods: {
+            getByType() {
+                this.productType === 'All' ? this.loadProducts() : this.loadProductsByType();
+            },
 			loadProducts() {
 				axios.get('products').then(response => this.products = response.data );
 			},
-			loadBlogsByType(tag) {
-				axios.get('tags/' + tag).then(response => this.blogs = response.data.posts );
-			}
+			loadProductsByType() {
+				axios.get('products', {
+                    params: {
+                        type: this.productType
+                    }
+                }).then(response => this.products = response.data );
+			},
+            newPrice(product) {
+                return parseFloat(product.price) - (parseFloat(product.price) * parseInt(product.discount) / 100);
+            }
 		}
 	}
 </script>

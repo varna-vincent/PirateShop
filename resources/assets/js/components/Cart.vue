@@ -6,6 +6,7 @@
                         <h1>Shopping cart</h1>
                         <p class="text-muted">You currently have {{ totalitems() }} item(s) in your cart.</p>
                         <div class="table-responsive">
+                            <form method="POST" @submit.prevent="onSubmit" @keydown="form.errors.clear()">
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -17,7 +18,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="order in orders">
+                                    <tr v-for="(order, index) in orders">
                                         <td>
                                             <a href="#"><img src="img/detailsquare.jpg" alt="White Blouse Armani"></a>
                                         </td>
@@ -29,7 +30,7 @@
                                         <td>${{ order.price }}</td>
                                         <td>${{ order.discount }}</td>
                                         <td>${{ total(order) }}</td>
-                                        <td><a href="#"><i class="fa fa-trash-o"></i></a>
+                                        <td><a @click="deleteOrder(order.id, index)"><i class="fa fa-trash-o"></i></a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -40,7 +41,7 @@
                                     </tr>
                                 </tfoot>
                             </table>
-
+                            </form>
                         </div>
                         <!-- /.table-responsive -->
 
@@ -154,6 +155,12 @@
 			},
             updateCart(order) {
                 
+            },
+            deleteOrder(id, index) {
+                console.log(id);
+                if(confirm("Are you sure you want to remove this item from your cart?")) {
+                    this.form.delete('orderproducts/' + id).then( response => this.orders.splice(index, 1) );
+                }
             }
 		}
 	}

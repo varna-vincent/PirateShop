@@ -27,5 +27,7 @@ Route::group(['middleware' => 'auth'], function() {
 
 	Route::resource('orders', 'OrdersController', ['except' => [ 'create', 'edit' ]]);
 
+	Route::resource('orderproducts', 'OrderProductsController', ['except' => [ 'create', 'edit' ]]);
+
 	Route::resource('userorderdetails', 'UserOrderDetailsController', ['except' => [ 'create', 'edit' ]]);
 }); 

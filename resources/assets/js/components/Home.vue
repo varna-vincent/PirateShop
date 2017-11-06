@@ -28,7 +28,7 @@
                             <div class="icon"><i class="fa fa-heart"></i>
                             </div>
 
-                            <h3><a>We love our customers</a></h3>
+                            <h3><router-link to="/">We love our customers</router-link></h3>
                             <p>We are known to provide best possible service ever</p>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                             <div class="icon"><i class="fa fa-tags"></i>
                             </div>
 
-                            <h3><a>Best prices</a></h3>
+                            <h3><router-link to="/">Best prices</router-link></h3>
                             <p>The best movies at the cheapest rates</p>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                             <div class="icon"><i class="fa fa-thumbs-up"></i>
                             </div>
 
-                            <h3><a>100% satisfaction guaranteed</a></h3>
+                            <h3><router-link to="/">100% satisfaction guaranteed</router-link></h3>
                             <p>Free returns on everything for 3 months.</p>
                         </div>
                     </div>

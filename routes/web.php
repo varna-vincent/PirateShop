@@ -15,8 +15,15 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/user/getLoggedinUser',  'UsersController@loggedinUser');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('products', 'ProductsController', ['except' => [ 'create', 'edit' ]]);
+
+Route::group(['middleware' => 'auth'], function() {
+
+	Route::resource('orders', 'OrdersController', ['except' => [ 'create', 'edit' ]]);
+}); 

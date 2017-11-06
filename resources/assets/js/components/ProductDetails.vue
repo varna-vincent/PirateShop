@@ -61,11 +61,14 @@
                             </p>
                             <p v-if="product.price">Was: <span class="oldprice">${{ product.price }} </span></p>
                             <p v-if="product.discount">You save: ${{ discount() }} <span class="discount">({{ product.discount }}% OFF)</span></p>
-                            <p v-if="product.price" class="price">${{ newPrice() }}</p>
+                            <p v-if="product.price" class="price">${{ newprice() }}</p>
                             <h6 v-if="product.available_count" class="text-center">Only {{ product.available_count }} left! Hurry!</h6>
-
-                            <p class="text-center buttons pad-5">
-                                <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a> 
+                            <p v-if="responseMsg != ''" class="response-msg text-center">{{ responseMsg }}</p>
+                            <p class="text-center buttons pad-5" v-if="!isLoggedIn">
+                                <router-link to="/login" class="btn btn-primary"><i class="fa fa-sign-in"></i> Log in to Buy</router-link> 
+                            </p>
+                            <p class="text-center buttons pad-5" v-if="isLoggedIn">
+                                <a @click="addToCart()" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a> 
                                 <a href="basket.html" class="btn btn-default"><i class="fa fa-heart"></i> Add to wishlist</a>
                             </p>
                         </div>
@@ -91,243 +94,88 @@
 
 
                 <div class="box" id="details">
-                    <p>
-                        <h4>Product details</h4>
-                        <blockquote v-if="product.description">
-                            <p><em>{{ product.description }}</em>
-                            </p>
-                        </blockquote>
-                        <p v-if="product.type" class="text-center">{{ product.type }}</p>
-                        <p v-if="product.actors"><strong>Actors : </strong> {{ product.actors }}</p>
-                        <p v-if="product.directors"><strong>Directors : </strong> {{ product.directors }}</p>
-                        <p v-if="product.writers"><strong>Writes : </strong> {{ product.writers }}</p>
-                        <p v-if="product.producers"><strong>Producers : </strong> {{ product.producers }}</p>
-                        <p v-if="product.studio"><strong>Studio : </strong> {{ product.studio }}</p>
-                        <p v-if="product.rated"><strong>MPAA Rating : </strong> {{ product.rated }}</p>
-                        <p v-if="product.subtitles"><strong>Subtitles : </strong> {{ product.subtitles }}</p>
-                        <p v-if="product.language"><strong>Language : </strong> {{ product.language }}</p>
-                        <p v-if="product.format"><strong>Format : </strong> {{ product.format }}</p>
-                        <p v-if="product.releasedate"><strong>Release Date : </strong> {{ product.releasedate }}</p>
-                        <p v-if="product.runtime"><strong>Run Time : </strong> {{ product.runtime }} min.</p>
-                        <hr>
-                        <div class="social">
-                            <h4>Show it to your friends</h4>
-                            <p>
-                                <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
-                                <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
-                                <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
-                                <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-                            </p>
-                        </div>
+                    <h4>Product details</h4>
+                    <blockquote v-if="product.description">
+                        <p><em>{{ product.description }}</em></p>
+                    </blockquote>
+                    <p v-if="product.type" class="text-center">{{ product.type }}</p>
+                    <p v-if="product.actors"><strong>Actors : </strong> {{ product.actors }}</p>
+                    <p v-if="product.directors"><strong>Directors : </strong> {{ product.directors }}</p>
+                    <p v-if="product.writers"><strong>Writes : </strong> {{ product.writers }}</p>
+                    <p v-if="product.producers"><strong>Producers : </strong> {{ product.producers }}</p>
+                    <p v-if="product.studio"><strong>Studio : </strong> {{ product.studio }}</p>
+                    <p v-if="product.rated"><strong>MPAA Rating : </strong> {{ product.rated }}</p>
+                    <p v-if="product.subtitles"><strong>Subtitles : </strong> {{ product.subtitles }}</p>
+                    <p v-if="product.language"><strong>Language : </strong> {{ product.language }}</p>
+                    <p v-if="product.format"><strong>Format : </strong> {{ product.format }}</p>
+                    <p v-if="product.releasedate"><strong>Release Date : </strong> {{ product.releasedate }}</p>
+                    <p v-if="product.runtime"><strong>Run Time : </strong> {{ product.runtime }} min.</p>
+                    <hr>
+                    <div class="social">
+                        <h4>Show it to your friends</h4>
+                        <p>
+                            <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
+                            <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                        </p>
+                    </div>
                 </div>
-
-                <div class="row same-height-row">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="box same-height">
-                            <h3>You may also like these products</h3>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="product same-height">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-                                        <a href="detail.html">
-                                            <img src="img/product2.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-                                        <a href="detail.html">
-                                            <img src="img/product2_2.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product2.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3>Fur coat</h3>
-                                <p class="price">$143</p>
-                            </div>
-                        </div>
-                        <!-- /.product -->
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="product same-height">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-                                        <a href="detail.html">
-                                            <img src="img/product1.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-                                        <a href="detail.html">
-                                            <img src="img/product1_2.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3>Fur coat</h3>
-                                <p class="price">$143</p>
-                            </div>
-                        </div>
-                        <!-- /.product -->
-                    </div>
-
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="product same-height">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-                                        <a href="detail.html">
-                                            <img src="img/product3.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-                                        <a href="detail.html">
-                                            <img src="img/product3_2.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product3.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3>Fur coat</h3>
-                                <p class="price">$143</p>
-
-                            </div>
-                        </div>
-                        <!-- /.product -->
-                    </div>
-
-                </div>
-
-                <div class="row same-height-row">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="box same-height">
-                            <h3>Products viewed recently</h3>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="product same-height">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-                                        <a href="detail.html">
-                                            <img src="img/product2.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-                                        <a href="detail.html">
-                                            <img src="img/product2_2.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product2.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3>Fur coat</h3>
-                                <p class="price">$143</p>
-                            </div>
-                        </div>
-                        <!-- /.product -->
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="product same-height">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-                                        <a href="detail.html">
-                                            <img src="img/product1.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-                                        <a href="detail.html">
-                                            <img src="img/product1_2.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product1.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3>Fur coat</h3>
-                                <p class="price">$143</p>
-                            </div>
-                        </div>
-                        <!-- /.product -->
-                    </div>
-
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="product same-height">
-                            <div class="flip-container">
-                                <div class="flipper">
-                                    <div class="front">
-                                        <a href="detail.html">
-                                            <img src="img/product3.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="back">
-                                        <a href="detail.html">
-                                            <img src="img/product3_2.jpg" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a href="detail.html" class="invisible">
-                                <img src="img/product3.jpg" alt="" class="img-responsive">
-                            </a>
-                            <div class="text">
-                                <h3>Fur coat</h3>
-                                <p class="price">$143</p>
-
-                            </div>
-                        </div> <!-- /.product -->
-                    </div>
-                </div> 
             </div> <!-- /.col-md-9 -->
         </div> <!-- /.container -->
     </div><!-- /#content -->
 </template>
 <script>
+    import auth from '../utilities/Auth';
+    import calculations from '../utilities/Calculations';
 	export default {
 		props: ['id'],
 		data() {
 			return {
-				product: {}
+                isLoggedIn: null,
+				product: {},
+                responseMsg: '',
+                form : new Form({
+                    status: 'cart',
+                    name: '',
+                    productid: null,
+                    price: null,
+                    discount: null
+                })
 			}
 		},
 		created() {
+            auth.getCurrentUser().then(response => this.isLoggedIn = (response.data.user != null) ? true : false );
 			this.loadProduct();
 		},
 		methods: {
 			loadProduct() {
-				axios.get('products/' + this.id).then(response => this.product = response.data );
+				axios.get('products/' + this.id).then(response => {
+                    this.product = response.data;
+                    this.loadForm(this.product.id, this.product.price, this.product.discount, this.product.name);
+                });
 			},
-			newPrice() {
-				return parseFloat(this.product.price) - this.discount();
+			newprice() {
+                return calculations.newPrice(this.product);
 			},
-			discount() {
-				return (parseFloat(this.product.price) * parseInt(this.product.discount) / 100);
-			}
+            discount() {
+                return calculations.discount(this.product);
+            },
+            addToCart() {
+                this.form.post('orders').then(response => {
+
+                    let orderproduct = response.data.orderproduct;
+                    this.responseMsg = orderproduct.quantity + " item(s) have been added to cart!" 
+                    this.loadForm(orderproduct.product_id, orderproduct.price, orderproduct.discount, orderproduct.name);
+                });
+            },
+            loadForm(productid, price, discount, name) {
+
+                this.form.productid = productid;
+                this.form.price = price;
+                this.form.discount = discount;
+                this.form.name = name;
+            }
 		}
 	}
 </script>

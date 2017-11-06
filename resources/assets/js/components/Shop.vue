@@ -58,7 +58,7 @@
                             </router-link>
                             <div class="text">
                                 <h3><router-link :to="{ name: 'product', params: { id: product.id }}">{{product.name}}</router-link></h3>
-                                <p class="price">${{newPrice(product)}}</p>
+                                <p class="price">${{ newprice(product) }}</p>
                                 <p class="buttons">
                                     <router-link :to="{ name: 'product', params: { id: product.id }}" class="btn btn-default">View detail</router-link>
                                     <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -88,6 +88,7 @@
     </div>
 </template>
 <script>
+    import calculations from '../utilities/Calculations';
 	export default {
 		data() {
 			return {
@@ -112,8 +113,8 @@
                     }
                 }).then(response => this.products = response.data );
 			},
-            newPrice(product) {
-                return parseFloat(product.price) - (parseFloat(product.price) * parseInt(product.discount) / 100);
+            newprice(product) {
+                return calculations.newPrice(product);
             }
 		}
 	}

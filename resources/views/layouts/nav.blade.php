@@ -6,7 +6,7 @@
         </div>
         <div class="col-md-6" data-animate="fadeInDown">
             <ul class="menu">
-                <li><a href="basket.html"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">0 items</span></a></li>
+                <li><router-link to="/cart"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">My Cart</span></router-link></li>
             </ul>
         </div>
     </div>
@@ -65,7 +65,8 @@
                                             <div class="col-sm-3">
                                                 <h5>ORDERS</h5>
                                                 <ul>
-                                                    <li><a href="category.html">Your Orders</a></li>
+                                                    <li><router-link to="/cart">My Cart</router-link></li>
+                                                    <li><a href="category.html">My Orders</a></li>
                                                 </ul>
                                                 @if (Auth::user()->isAdmin())
                                                 <h5>PRODUCTS</h5>

@@ -13,6 +13,14 @@ class User extends Authenticatable
         return ($this->role === 'admin') ? true : false; // this looks for a role column in your users table
     }
 
+    public function orders() {
+        return $this->hasMany(Order::class);
+    }
+
+    public function addToCart($order) {
+        return $this->orders()->create($order);
+    }
+
     /**
      * The attributes that are mass assignable.
      *

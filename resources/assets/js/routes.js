@@ -26,6 +26,10 @@ let routes = [
 		name: 'product',
 		component: require('./components/ProductDetails'),
 		props: true
+	},
+	{
+		path: '/cart',
+		component: require('./components/Cart')
 	}
 ];
 

@@ -158,9 +158,8 @@
                 
             },
             deleteOrder(id, index) {
-                console.log(id);
                 if(confirm("Are you sure you want to remove this item from your cart?")) {
-                    this.form.delete('orderproducts/' + id).then( response => this.orders.splice(index, 1) );
+                    this.form.delete('orderProducts/' + id).then( response => this.orders.splice(index, 1) );
                 }
             },
             discount100() {

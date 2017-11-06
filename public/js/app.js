@@ -64075,9 +64075,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         deleteOrder: function deleteOrder(id, index) {
             var _this3 = this;
 
-            console.log(id);
             if (confirm("Are you sure you want to remove this item from your cart?")) {
-                this.form.delete('orderproducts/' + id).then(function (response) {
+                this.form.delete('orderProducts/' + id).then(function (response) {
                     return _this3.orders.splice(index, 1);
                 });
             }

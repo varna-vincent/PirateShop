@@ -4,11 +4,13 @@
         <div class="col-md-6 offer" data-animate="fadeInDown">
             <router-link to="/" class="btn btn-success btn-sm">Offer of the day</router-link>  <router-link to="/shop">Get flat 5% off on orders over 100 items!</router-link>
         </div>
+        @if (!Auth::guest())
         <div class="col-md-6" data-animate="fadeInDown">
             <ul class="menu">
                 <li><router-link to="/cart"><i class="fa fa-shopping-cart"></i><span class="hidden-sm">My Cart</span></router-link></li>
             </ul>
         </div>
+        @endif
     </div>
 </div>
 <!-- *** TOP BAR END *** -->

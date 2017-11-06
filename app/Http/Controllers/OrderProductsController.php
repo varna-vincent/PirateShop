@@ -80,7 +80,6 @@ class OrderProductsController extends Controller
      */
     public function destroy(OrderProduct $orderProduct)
     {
-        var_dump($orderProduct);
         $orderProduct->delete();
         return $orderProduct;
     }

@@ -88,7 +88,7 @@
 <div id="copyright">
     <div class="container">
         <div class="col-md-6">
-            <p class="pull-left">© 2017 Developed by Varna Vincent for ClickTime Challenge.</p>
+            <p class="pull-left">© 2017 Developed by <a target="_blank" href="https://varna-vincent.github.io/">Varna Vincent</a> for ClickTime Challenge.</p>
 
         </div>
         <div class="col-md-6">

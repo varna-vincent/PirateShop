@@ -30,6 +30,16 @@ let routes = [
 	{
 		path: '/cart',
 		component: require('./components/Cart')
+	},
+	{
+		path: '/checkout/:orderid',
+		name: 'checkout',
+		component: require('./components/Checkout'),
+		props: true
+	},
+	{
+		path: '/orderhistory',
+		component: require('./components/OrderHistory')
 	}
 ];
 

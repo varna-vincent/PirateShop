@@ -13,7 +13,7 @@ class Product extends Model
     
     protected $fillable = ['name', 'type', 'price', 'discount', 'available_count', 'actors', 'directors', 'writers', 'producers', 'format', 'language', 'subtitles', 'rated', 'studio', 'runtime', 'release_date'];
 
-    public function order() {
+    public function orderproduct() {
     	return $this->belongsTo(OrderProduct::class);
     }
 }

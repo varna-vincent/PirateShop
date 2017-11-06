@@ -66,7 +66,7 @@
                                                 <h5>ORDERS</h5>
                                                 <ul>
                                                     <li><router-link to="/cart">My Cart</router-link></li>
-                                                    <li><a href="category.html">My Orders</a></li>
+                                                    <li><router-link to="/orderhistory">My Orders</router-link></li>
                                                 </ul>
                                                 @if (Auth::user()->isAdmin())
                                                 <h5>PRODUCTS</h5>

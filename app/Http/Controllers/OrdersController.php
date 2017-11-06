@@ -16,7 +16,12 @@ class OrdersController extends Controller
      */
     public function index()
     {
-        //
+        $order = Order::where('user_id', auth()->user()->id)->where('status', 'Received')->first();
+        if($order != null) { 
+            $orderproducts = OrderProduct::where('order_id', $order->id)->get();
+        }
+
+        return compact('order','orderproducts');
     }
 
     /**

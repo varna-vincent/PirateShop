@@ -43,6 +43,14 @@
                                     <th colspan="5">Total</th>
                                     <th colspan="2">${{ sum() }}</th>
                                 </tr>
+                                <tr>
+                                    <th colspan="5">Discount over 100</th>
+                                    <th colspan="2">${{ discount100() }}</th>
+                                </tr>
+                                <tr>
+                                    <th colspan="5">Net Amount</th>
+                                    <th colspan="2">${{ netamount() }}</th>
+                                </tr>
                             </tfoot>
 	                    </table>
 	                    <p v-if="status != ''" class="red-text text-center">{{ status }}</p>
@@ -112,6 +120,12 @@
 					return item.quantity + total;
 				}, 0);
 			},
+            discount100() {
+                return calculations.discount100(this.totalitems(), this.sum());
+            },
+            netamount() {
+                return calculations.netamount(this.sum(), this.discount100());
+            },
 			onSubmit() {
 				this.form.patch('orders/' + this.order.id).then( response => {
 					console.log(response.data);

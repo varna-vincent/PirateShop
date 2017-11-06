@@ -4804,6 +4804,12 @@ module.exports = {
 	},
 	total: function total(product) {
 		return parseInt(product.quantity) * this.newPrice(product);
+	},
+	discount100: function discount100(totalitems, totalamount) {
+		return (totalitems > 4 ? totalamount * 5 / 100 : 0).toFixed(2);
+	},
+	netamount: function netamount(amount, discount) {
+		return (parseFloat(amount) - parseFloat(discount)).toFixed(2);
 	}
 });
 
@@ -64015,67 +64021,73 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	data: function data() {
-		return {
-			loggedInUser: null,
-			order: null,
-			orders: [],
-			form: new Form({
-				status: 'cart',
-				quantity: null
-			})
-		};
-	},
-	created: function created() {
-		var _this = this;
+    data: function data() {
+        return {
+            loggedInUser: null,
+            order: null,
+            orders: [],
+            form: new Form({
+                status: 'cart',
+                quantity: null
+            })
+        };
+    },
+    created: function created() {
+        var _this = this;
 
-		__WEBPACK_IMPORTED_MODULE_0__utilities_Auth__["a" /* default */].getCurrentUser().then(function (response) {
-			_this.loggedInUser = response.data.user;
-			_this.loadCart();
-		});
-	},
+        __WEBPACK_IMPORTED_MODULE_0__utilities_Auth__["a" /* default */].getCurrentUser().then(function (response) {
+            _this.loggedInUser = response.data.user;
+            _this.loadCart();
+        });
+    },
 
-	methods: {
-		loadCart: function loadCart() {
-			var _this2 = this;
+    methods: {
+        loadCart: function loadCart() {
+            var _this2 = this;
 
-			axios.get('orders/' + this.loggedInUser.id, {
-				params: {
-					status: 'cart'
-				}
-			}).then(function (response) {
-				_this2.order = response.data[0];
-				_this2.orders = response.data[0].orderproducts;
-			});
-		},
-		total: function total(order) {
-			var total = __WEBPACK_IMPORTED_MODULE_1__utilities_Calculations__["a" /* default */].total(order);
-			return total;
-		},
-		sum: function sum() {
-			return this.orders.map(function (item) {
-				return item.quantity * (parseFloat(item.price) - parseFloat(item.price) * parseInt(item.discount) / 100);
-			}).reduce(function (total, num) {
-				return total + num;
-			}, 0);
-		},
-		totalitems: function totalitems() {
-			return this.orders.reduce(function (total, item) {
-				return item.quantity + total;
-			}, 0);
-		},
-		updateCart: function updateCart(order) {},
-		deleteOrder: function deleteOrder(id, index) {
-			var _this3 = this;
+            axios.get('orders/' + this.loggedInUser.id, {
+                params: {
+                    status: 'cart'
+                }
+            }).then(function (response) {
+                _this2.order = response.data[0];
+                _this2.orders = response.data[0].orderproducts;
+            });
+        },
+        total: function total(order) {
+            var total = __WEBPACK_IMPORTED_MODULE_1__utilities_Calculations__["a" /* default */].total(order);
+            return total;
+        },
+        sum: function sum() {
+            return this.orders.map(function (item) {
+                return item.quantity * (parseFloat(item.price) - parseFloat(item.price) * parseInt(item.discount) / 100);
+            }).reduce(function (total, num) {
+                return total + num;
+            }, 0);
+        },
+        totalitems: function totalitems() {
+            return this.orders.reduce(function (total, item) {
+                return item.quantity + total;
+            }, 0);
+        },
+        updateCart: function updateCart(order) {},
+        deleteOrder: function deleteOrder(id, index) {
+            var _this3 = this;
 
-			console.log(id);
-			if (confirm("Are you sure you want to remove this item from your cart?")) {
-				this.form.delete('orderproducts/' + id).then(function (response) {
-					return _this3.orders.splice(index, 1);
-				});
-			}
-		}
-	}
+            console.log(id);
+            if (confirm("Are you sure you want to remove this item from your cart?")) {
+                this.form.delete('orderproducts/' + id).then(function (response) {
+                    return _this3.orders.splice(index, 1);
+                });
+            }
+        },
+        discount100: function discount100() {
+            return __WEBPACK_IMPORTED_MODULE_1__utilities_Calculations__["a" /* default */].discount100(this.totalitems(), this.sum());
+        },
+        netamount: function netamount() {
+            return __WEBPACK_IMPORTED_MODULE_1__utilities_Calculations__["a" /* default */].netamount(this.sum(), this.discount100());
+        }
+    }
 });
 
 /***/ }),
@@ -64270,21 +64282,25 @@ var render = function() {
                   _c("th", [_vm._v("$" + _vm._s(_vm.sum()))])
                 ]),
                 _vm._v(" "),
-                _vm._m(3),
+                _c("tr", [
+                  _c("td", [_vm._v("Discount over 100")]),
+                  _vm._v(" "),
+                  _c("th", [_vm._v("$" + _vm._s(_vm.discount100()))])
+                ]),
                 _vm._v(" "),
-                _vm._m(4),
+                _vm._m(3),
                 _vm._v(" "),
                 _c("tr", { staticClass: "total" }, [
                   _c("td", [_vm._v("Total")]),
                   _vm._v(" "),
-                  _c("th", [_vm._v("$" + _vm._s(_vm.sum()))])
+                  _c("th", [_vm._v("$" + _vm._s(_vm.netamount()))])
                 ])
               ])
             ])
           ])
         ]),
         _vm._v(" "),
-        _vm._m(5)
+        _vm._m(4)
       ])
     ])
   ])
@@ -64326,16 +64342,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "box-header" }, [
       _c("h3", [_vm._v("Order summary")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("tr", [
-      _c("td", [_vm._v("Shipping and handling")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("$0.00")])
     ])
   },
   function() {
@@ -65830,6 +65836,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -65882,6 +65896,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			return this.orders.reduce(function (total, item) {
 				return item.quantity + total;
 			}, 0);
+		},
+		discount100: function discount100() {
+			return __WEBPACK_IMPORTED_MODULE_1__utilities_Calculations__["a" /* default */].discount100(this.totalitems(), this.sum());
+		},
+		netamount: function netamount() {
+			return __WEBPACK_IMPORTED_MODULE_1__utilities_Calculations__["a" /* default */].netamount(this.sum(), this.discount100());
 		},
 		onSubmit: function onSubmit() {
 			var _this3 = this;
@@ -65974,6 +65994,26 @@ var render = function() {
                     _vm._v(" "),
                     _c("th", { attrs: { colspan: "2" } }, [
                       _vm._v("$" + _vm._s(_vm.sum()))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", [
+                    _c("th", { attrs: { colspan: "5" } }, [
+                      _vm._v("Discount over 100")
+                    ]),
+                    _vm._v(" "),
+                    _c("th", { attrs: { colspan: "2" } }, [
+                      _vm._v("$" + _vm._s(_vm.discount100()))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("tr", [
+                    _c("th", { attrs: { colspan: "5" } }, [
+                      _vm._v("Net Amount")
+                    ]),
+                    _vm._v(" "),
+                    _c("th", { attrs: { colspan: "2" } }, [
+                      _vm._v("$" + _vm._s(_vm.netamount()))
                     ])
                   ])
                 ])

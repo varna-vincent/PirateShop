@@ -72,8 +72,8 @@
                                         <th>${{ sum() }}</th>
                                     </tr>
                                     <tr>
-                                        <td>Shipping and handling</td>
-                                        <th>$0.00</th>
+                                        <td>Discount over 100</td>
+                                        <th>${{ discount100() }}</th>
                                     </tr>
                                     <tr>
                                         <td>Tax</td>
@@ -81,7 +81,7 @@
                                     </tr>
                                     <tr class="total">
                                         <td>Total</td>
-                                        <th>${{ sum() }}</th>
+                                        <th>${{ netamount() }}</th>
                                     </tr>
                                 </tbody>
                             </table>
@@ -161,6 +161,12 @@
                 if(confirm("Are you sure you want to remove this item from your cart?")) {
                     this.form.delete('orderproducts/' + id).then( response => this.orders.splice(index, 1) );
                 }
+            },
+            discount100() {
+                return calculations.discount100(this.totalitems(), this.sum());
+            },
+            netamount() {
+                return calculations.netamount(this.sum(), this.discount100());
             }
 		}
 	}

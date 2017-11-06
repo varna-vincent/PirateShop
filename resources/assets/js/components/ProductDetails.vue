@@ -16,8 +16,8 @@
                                 <a href="category.html">Type <span class="badge pull-right"></span></a>
                                 <ul>
                                     <li><router-link to="/shop">All</router-link></li>
-                                    <li><a href="category.html">DVD</a></li>
-                                    <li><a href="category.html">BluRay</a></li>
+                                    <li><router-link to="/shop">DVD</router-link></li>
+                                    <li><router-link to="/shop">BluRay</router-link></li>
                                 </ul>
                             </li>
                         </ul>
@@ -26,9 +26,7 @@
                 <!-- *** MENUS AND FILTERS END *** -->
 
                 <div class="banner">
-                    <a href="#">
-                        <img src="img/banner.jpg" alt="sales 2014" class="img-responsive">
-                    </a>
+                    <a><img src="img/banner.jpg" alt="sales 2014" class="img-responsive"></a>
                 </div>
             </div>
 
@@ -69,7 +67,7 @@
                             </p>
                             <p class="text-center buttons pad-5" v-if="isLoggedIn">
                                 <a @click="addToCart()" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add to cart</a> 
-                                <a href="basket.html" class="btn btn-default"><i class="fa fa-heart"></i> Add to wishlist</a>
+                                <a class="btn btn-default"><i class="fa fa-heart"></i> Add to wishlist</a>
                             </p>
                         </div>
                         <div class="row" id="thumbs">
@@ -114,10 +112,10 @@
                     <div class="social">
                         <h4>Show it to your friends</h4>
                         <p>
-                            <a href="#" class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
-                            <a href="#" class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
-                            <a href="#" class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
-                            <a href="#" class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
+                            <a class="external facebook" data-animate-hover="pulse"><i class="fa fa-facebook"></i></a>
+                            <a class="external gplus" data-animate-hover="pulse"><i class="fa fa-google-plus"></i></a>
+                            <a class="external twitter" data-animate-hover="pulse"><i class="fa fa-twitter"></i></a>
+                            <a class="email" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
                         </p>
                     </div>
                 </div>

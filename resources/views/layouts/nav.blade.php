@@ -2,7 +2,7 @@
 <div id="top">
     <div class="container">
         <div class="col-md-6 offer" data-animate="fadeInDown">
-            <a href="#" class="btn btn-success btn-sm" data-animate-hover="shake">Offer of the day</a>  <a href="#">Get flat 35% off on orders over $50!</a>
+            <router-link to="/" class="btn btn-success btn-sm">Offer of the day</router-link>  <router-link to="/shop">Get flat 5% off on orders over 100 items!</router-link>
         </div>
         <div class="col-md-6" data-animate="fadeInDown">
             <ul class="menu">
@@ -19,10 +19,10 @@
     <div class="container">
         <div class="navbar-header">
 
-            <a class="navbar-brand home" href="index.html" data-animate-hover="bounce">
+            <router-link class="navbar-brand home" to="/">
                 <img src="img/logo.png" alt="Obaju logo" class="hidden-xs">
                 <img src="img/logo-small.png" alt="Obaju logo" class="visible-xs"><span class="sr-only">Obaju - go to homepage</span>
-            </a>
+            </router-link>
             <div class="navbar-buttons">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation">
                     <span class="sr-only">Toggle navigation</span>
@@ -57,7 +57,7 @@
                         <li><router-link to="/register" exact>Login | Register</router-link></li>
                     @else
                         <li class="dropdown yamm-fw">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">{{ Auth::user()->name }} <b class="caret"></b></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200">{{ Auth::user()->name }} <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>
                                     <div class="yamm-content">
@@ -72,21 +72,21 @@
                                                 <h5>PRODUCTS</h5>
                                                 <ul>
                                                     <li><router-link to="/addproduct">Add Products</router-link></li>
-                                                    <li><a href="category.html">List Products</a></li>
+                                                    <li><router-link to="/shop">List Products</a></li>
                                                 </ul>
                                                 @endif
                                             </div>
                                             <div class="col-sm-3">
                                                 <h5>ADDRESSES</h5>
                                                 <ul>
-                                                    <li><a href="category.html">Shipping Address</a></li>
-                                                    <li><a href="category.html">Billing Address</a></li>
+                                                    <li><a>Shipping Address</a></li>
+                                                    <li><a>Billing Address</a></li>
                                                 </ul>
                                             </div>
                                             <div class="col-sm-3">
                                                 <h5>LOGIN & SECURITY</h5>
                                                 <ul>
-                                                    <li><a href="category.html">Change Password</a></li>
+                                                    <li><a >Change Password</a></li>
                                                     <li>
                                                         <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a>    
                                                         <form id="logout-form" name="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -97,7 +97,7 @@
                                             </div>
                                             <div class="col-sm-3">
                                                 <div class="banner">
-                                                    <a href="#"><img src="img/banner2.jpg" class="img img-responsive" alt=""></a>
+                                                    <router-link to="/"><img src="img/banner2.jpg" class="img img-responsive" alt=""></router-link>
                                                 </div>
                                             </div>
                                         </div>

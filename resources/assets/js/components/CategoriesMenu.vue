@@ -10,11 +10,11 @@
             <div class="panel-body">
                 <ul class="nav nav-pills nav-stacked category-menu">
                     <li>
-                        <a href="category.html">Type <span class="badge pull-right"></span></a>
+                        <a>Type <span class="badge pull-right"></span></a>
                         <ul>
                         	<li class="active"><router-link to="/shop">All</router-link></li>
-                            <li><router-link :to="{ name: 'shop', params: { type : 'DVD'}}">DVD</router-link></li>
-                            <li><router-link :to="{ name: 'shop', params: { type : 'BluRay'}}">BluRay</router-link></li>
+                            <li><router-link to="/shop">DVD</router-link></li>
+                            <li><router-link to="/shop">BluRay</router-link></li>
                         </ul>
                     </li>
                 </ul>
@@ -23,9 +23,7 @@
         <!-- *** MENUS AND FILTERS END *** -->
 
         <div class="banner">
-            <a href="#">
-                <img src="img/banner.jpg" alt="sales 2014" class="img-responsive">
-            </a>
+            <a><img src="img/banner.jpg" alt="sales 2014" class="img-responsive"></a>
         </div>
     </div>
 </template>

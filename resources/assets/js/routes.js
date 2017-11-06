@@ -40,6 +40,14 @@ let routes = [
 	{
 		path: '/orderhistory',
 		component: require('./components/OrderHistory')
+	},
+	{
+		path: '/myaccount',
+		component: require('./components/MyAccount')
+	},
+	{
+		path: '/contact',
+		component: require('./components/Contact')
 	}
 ];
 

@@ -17,7 +17,7 @@
                                 <form class="form-inline">
                                     <div class="col-md-6 col-sm-6">
                                         <div class="products-number">
-                                            <strong>Show</strong>  <a href="#" class="btn btn-default btn-sm btn-primary">12</a>  <a href="#" class="btn btn-default btn-sm">24</a>  <a href="#" class="btn btn-default btn-sm">All</a> products
+                                            <strong>Show</strong>  <a class="btn btn-default btn-sm btn-primary">12</a>  <a class="btn btn-default btn-sm">24</a>  <a class="btn btn-default btn-sm">All</a> products
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6">
@@ -59,9 +59,10 @@
                             <div class="text">
                                 <h3><router-link :to="{ name: 'product', params: { id: product.id }}">{{product.name}}</router-link></h3>
                                 <p class="price">${{ newprice(product) }}</p>
+                                <p v-if="responseMsg != ''" class="response-msg text-center">{{ responseMsg }}</p>
                                 <p class="buttons">
                                     <router-link :to="{ name: 'product', params: { id: product.id }}" class="btn btn-default">View detail</router-link>
-                                    <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                    <a @click="addToCart(product)" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </p>
                             </div>
                         </div>
@@ -71,16 +72,16 @@
 
                 <div class="pages">
                     <p class="loadMore">
-                        <a href="#" class="btn btn-primary btn-lg"><i class="fa fa-chevron-down"></i> Load more</a>
+                        <a class="btn btn-primary btn-lg"><i class="fa fa-chevron-down"></i> Load more</a>
                     </p>
                     <ul class="pagination">
-                        <li><a href="#">&laquo;</a></li>
+                        <li><a >&laquo;</a></li>
                         <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">&raquo;</a></li>
+                        <li><a >2</a></li>
+                        <li><a >3</a></li>
+                        <li><a >4</a></li>
+                        <li><a >5</a></li>
+                        <li><a >&raquo;</a></li>
                     </ul>
                 </div>
             </div> <!-- /.col-md-9 -->
@@ -93,7 +94,15 @@
 		data() {
 			return {
                 productType: '',
-				products: []
+				products: [],
+                responseMsg: '',
+                form : new Form({
+                    status: 'cart',
+                    name: '',
+                    productid: null,
+                    price: null,
+                    discount: null
+                })
 			}
 		},
 		created() {
@@ -115,6 +124,21 @@
 			},
             newprice(product) {
                 return calculations.newPrice(product);
+            },
+            addToCart(product) {
+                this.loadForm(product.id, product.price, product.discount, product.name);
+                this.form.post('orders').then(response => {
+
+                    let orderproduct = response.data.orderproduct;
+                    this.responseMsg = orderproduct.quantity + " item(s) added to cart!" 
+                });
+            },
+            loadForm(productid, price, discount, name) {
+
+                this.form.productid = productid;
+                this.form.price = price;
+                this.form.discount = discount;
+                this.form.name = name;
             }
 		}
 	}

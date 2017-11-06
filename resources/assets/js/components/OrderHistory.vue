@@ -12,16 +12,13 @@
 
                     <ul class="nav nav-pills nav-stacked">
                         <li class="active">
-                            <a href="customer-orders.html"><i class="fa fa-list"></i> My orders</a>
+                            <router-link to="/orderhistory"><i class="fa fa-list"></i> My orders</router-link>
                         </li>
                         <li>
-                            <a href="customer-wishlist.html"><i class="fa fa-heart"></i> My wishlist</a>
+                            <a><i class="fa fa-heart"></i> My wishlist</a>
                         </li>
                         <li>
-                            <a href="customer-account.html"><i class="fa fa-user"></i> My account</a>
-                        </li>
-                        <li>
-                            <a href="index.html"><i class="fa fa-sign-out"></i> Logout</a>
+                            <router-link to="/myaccount"><i class="fa fa-user"></i> My account</router-link>
                         </li>
                     </ul>
                 </div>
@@ -33,7 +30,7 @@
                 <h1>My orders</h1>
 
                 <p class="lead">Your orders on one place.</p>
-                <p class="text-muted">If you have any questions, please feel free to <a href="contact.html">contact us</a>, our customer service center is working for you 24/7.</p>
+                <p class="text-muted">If you have any questions, please feel free to <router-link to="/contact">contact us</router-link>, our customer service center is working for you 24/7.</p>
                 <hr>
 
                 <div class="table-responsive">

@@ -18502,7 +18502,7 @@ return zhTw;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(126);
-module.exports = __webpack_require__(206);
+module.exports = __webpack_require__(212);
 
 
 /***/ }),
@@ -60378,6 +60378,12 @@ var routes = [{
 }, {
 	path: '/orderhistory',
 	component: __webpack_require__(202)
+}, {
+	path: '/myaccount',
+	component: __webpack_require__(206)
+}, {
+	path: '/contact',
+	component: __webpack_require__(209)
 }];
 
 /* harmony default export */ __webpack_exports__["a"] = (new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
@@ -60439,361 +60445,6 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -60920,11 +60571,7 @@ var staticRenderFns = [
                   _c("i", { staticClass: "fa fa-heart" })
                 ]),
                 _vm._v(" "),
-                _c("h3", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("We love our customers")
-                  ])
-                ]),
+                _c("h3", [_c("a", [_vm._v("We love our customers")])]),
                 _vm._v(" "),
                 _c("p", [
                   _vm._v("We are known to provide best possible service ever")
@@ -60938,15 +60585,9 @@ var staticRenderFns = [
                   _c("i", { staticClass: "fa fa-tags" })
                 ]),
                 _vm._v(" "),
-                _c("h3", [
-                  _c("a", { attrs: { href: "#" } }, [_vm._v("Best prices")])
-                ]),
+                _c("h3", [_c("a", [_vm._v("Best prices")])]),
                 _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "You can check that the height of the boxes adjust when longer text like this one is used in one of them."
-                  )
-                ])
+                _c("p", [_vm._v("The best movies at the cheapest rates")])
               ])
             ]),
             _vm._v(" "),
@@ -60956,630 +60597,13 @@ var staticRenderFns = [
                   _c("i", { staticClass: "fa fa-thumbs-up" })
                 ]),
                 _vm._v(" "),
-                _c("h3", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("100% satisfaction guaranteed")
-                  ])
-                ]),
+                _c("h3", [_c("a", [_vm._v("100% satisfaction guaranteed")])]),
                 _vm._v(" "),
                 _c("p", [_vm._v("Free returns on everything for 3 months.")])
               ])
             ])
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { attrs: { id: "hot" } }, [
-        _c("div", { staticClass: "box" }, [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c("h2", [_vm._v("Hot this week")])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "product-slider" }, [
-            _c("div", { staticClass: "item" }, [
-              _c("div", { staticClass: "product" }, [
-                _c("div", { staticClass: "flip-container" }, [
-                  _c("div", { staticClass: "flipper" }, [
-                    _c("div", { staticClass: "front" }, [
-                      _c("a", { attrs: { href: "detail.html" } }, [
-                        _c("img", {
-                          staticClass: "img-responsive",
-                          attrs: { src: "img/product1.jpg", alt: "" }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "back" }, [
-                      _c("a", { attrs: { href: "detail.html" } }, [
-                        _c("img", {
-                          staticClass: "img-responsive",
-                          attrs: { src: "img/product1_2.jpg", alt: "" }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  { staticClass: "invisible", attrs: { href: "detail.html" } },
-                  [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: { src: "img/product1.jpg", alt: "" }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "text" }, [
-                  _c("h3", [
-                    _c("a", { attrs: { href: "detail.html" } }, [
-                      _vm._v("Fur coat with very but very very long name")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "price" }, [_vm._v("$143.00")])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "item" }, [
-              _c("div", { staticClass: "product" }, [
-                _c("div", { staticClass: "flip-container" }, [
-                  _c("div", { staticClass: "flipper" }, [
-                    _c("div", { staticClass: "front" }, [
-                      _c("a", { attrs: { href: "detail.html" } }, [
-                        _c("img", {
-                          staticClass: "img-responsive",
-                          attrs: { src: "img/product2.jpg", alt: "" }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "back" }, [
-                      _c("a", { attrs: { href: "detail.html" } }, [
-                        _c("img", {
-                          staticClass: "img-responsive",
-                          attrs: { src: "img/product2_2.jpg", alt: "" }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  { staticClass: "invisible", attrs: { href: "detail.html" } },
-                  [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: { src: "img/product2.jpg", alt: "" }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "text" }, [
-                  _c("h3", [
-                    _c("a", { attrs: { href: "detail.html" } }, [
-                      _vm._v("White Blouse Armani")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "price" }, [
-                    _c("del", [_vm._v("$280")]),
-                    _vm._v(" $143.00")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "ribbon sale" }, [
-                  _c("div", { staticClass: "theribbon" }, [_vm._v("SALE")]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "ribbon-background" })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "ribbon new" }, [
-                  _c("div", { staticClass: "theribbon" }, [_vm._v("NEW")]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "ribbon-background" })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "ribbon gift" }, [
-                  _c("div", { staticClass: "theribbon" }, [_vm._v("GIFT")]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "ribbon-background" })
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "item" }, [
-              _c("div", { staticClass: "product" }, [
-                _c("div", { staticClass: "flip-container" }, [
-                  _c("div", { staticClass: "flipper" }, [
-                    _c("div", { staticClass: "front" }, [
-                      _c("a", { attrs: { href: "detail.html" } }, [
-                        _c("img", {
-                          staticClass: "img-responsive",
-                          attrs: { src: "img/product3.jpg", alt: "" }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "back" }, [
-                      _c("a", { attrs: { href: "detail.html" } }, [
-                        _c("img", {
-                          staticClass: "img-responsive",
-                          attrs: { src: "img/product3_2.jpg", alt: "" }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  { staticClass: "invisible", attrs: { href: "detail.html" } },
-                  [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: { src: "img/product3.jpg", alt: "" }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "text" }, [
-                  _c("h3", [
-                    _c("a", { attrs: { href: "detail.html" } }, [
-                      _vm._v("Black Blouse Versace")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "price" }, [_vm._v("$143.00")])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "item" }, [
-              _c("div", { staticClass: "product" }, [
-                _c("div", { staticClass: "flip-container" }, [
-                  _c("div", { staticClass: "flipper" }, [
-                    _c("div", { staticClass: "front" }, [
-                      _c("a", { attrs: { href: "detail.html" } }, [
-                        _c("img", {
-                          staticClass: "img-responsive",
-                          attrs: { src: "img/product3.jpg", alt: "" }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "back" }, [
-                      _c("a", { attrs: { href: "detail.html" } }, [
-                        _c("img", {
-                          staticClass: "img-responsive",
-                          attrs: { src: "img/product3_2.jpg", alt: "" }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  { staticClass: "invisible", attrs: { href: "detail.html" } },
-                  [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: { src: "img/product3.jpg", alt: "" }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "text" }, [
-                  _c("h3", [
-                    _c("a", { attrs: { href: "detail.html" } }, [
-                      _vm._v("Black Blouse Versace")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "price" }, [_vm._v("$143.00")])
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "item" }, [
-              _c("div", { staticClass: "product" }, [
-                _c("div", { staticClass: "flip-container" }, [
-                  _c("div", { staticClass: "flipper" }, [
-                    _c("div", { staticClass: "front" }, [
-                      _c("a", { attrs: { href: "detail.html" } }, [
-                        _c("img", {
-                          staticClass: "img-responsive",
-                          attrs: { src: "img/product2.jpg", alt: "" }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "back" }, [
-                      _c("a", { attrs: { href: "detail.html" } }, [
-                        _c("img", {
-                          staticClass: "img-responsive",
-                          attrs: { src: "img/product2_2.jpg", alt: "" }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  { staticClass: "invisible", attrs: { href: "detail.html" } },
-                  [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: { src: "img/product2.jpg", alt: "" }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "text" }, [
-                  _c("h3", [
-                    _c("a", { attrs: { href: "detail.html" } }, [
-                      _vm._v("White Blouse Versace")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "price" }, [_vm._v("$143.00")])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "ribbon new" }, [
-                  _c("div", { staticClass: "theribbon" }, [_vm._v("NEW")]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "ribbon-background" })
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "item" }, [
-              _c("div", { staticClass: "product" }, [
-                _c("div", { staticClass: "flip-container" }, [
-                  _c("div", { staticClass: "flipper" }, [
-                    _c("div", { staticClass: "front" }, [
-                      _c("a", { attrs: { href: "detail.html" } }, [
-                        _c("img", {
-                          staticClass: "img-responsive",
-                          attrs: { src: "img/product1.jpg", alt: "" }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "back" }, [
-                      _c("a", { attrs: { href: "detail.html" } }, [
-                        _c("img", {
-                          staticClass: "img-responsive",
-                          attrs: { src: "img/product1_2.jpg", alt: "" }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  { staticClass: "invisible", attrs: { href: "detail.html" } },
-                  [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: { src: "img/product1.jpg", alt: "" }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "text" }, [
-                  _c("h3", [
-                    _c("a", { attrs: { href: "detail.html" } }, [
-                      _vm._v("Fur coat")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "price" }, [_vm._v("$143.00")])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "ribbon gift" }, [
-                  _c("div", { staticClass: "theribbon" }, [_vm._v("GIFT")]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "ribbon-background" })
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "item" }, [
-              _c("div", { staticClass: "product" }, [
-                _c("div", { staticClass: "flip-container" }, [
-                  _c("div", { staticClass: "flipper" }, [
-                    _c("div", { staticClass: "front" }, [
-                      _c("a", { attrs: { href: "detail.html" } }, [
-                        _c("img", {
-                          staticClass: "img-responsive",
-                          attrs: { src: "img/product2.jpg", alt: "" }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "back" }, [
-                      _c("a", { attrs: { href: "detail.html" } }, [
-                        _c("img", {
-                          staticClass: "img-responsive",
-                          attrs: { src: "img/product2_2.jpg", alt: "" }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  { staticClass: "invisible", attrs: { href: "detail.html" } },
-                  [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: { src: "img/product2.jpg", alt: "" }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "text" }, [
-                  _c("h3", [
-                    _c("a", { attrs: { href: "detail.html" } }, [
-                      _vm._v("White Blouse Armani")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "price" }, [
-                    _c("del", [_vm._v("$280")]),
-                    _vm._v(" $143.00")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "ribbon sale" }, [
-                  _c("div", { staticClass: "theribbon" }, [_vm._v("SALE")]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "ribbon-background" })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "ribbon new" }, [
-                  _c("div", { staticClass: "theribbon" }, [_vm._v("NEW")]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "ribbon-background" })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "ribbon gift" }, [
-                  _c("div", { staticClass: "theribbon" }, [_vm._v("GIFT")]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "ribbon-background" })
-                ])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "item" }, [
-              _c("div", { staticClass: "product" }, [
-                _c("div", { staticClass: "flip-container" }, [
-                  _c("div", { staticClass: "flipper" }, [
-                    _c("div", { staticClass: "front" }, [
-                      _c("a", { attrs: { href: "detail.html" } }, [
-                        _c("img", {
-                          staticClass: "img-responsive",
-                          attrs: { src: "img/product3.jpg", alt: "" }
-                        })
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "back" }, [
-                      _c("a", { attrs: { href: "detail.html" } }, [
-                        _c("img", {
-                          staticClass: "img-responsive",
-                          attrs: { src: "img/product3_2.jpg", alt: "" }
-                        })
-                      ])
-                    ])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c(
-                  "a",
-                  { staticClass: "invisible", attrs: { href: "detail.html" } },
-                  [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: { src: "img/product3.jpg", alt: "" }
-                    })
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "text" }, [
-                  _c("h3", [
-                    _c("a", { attrs: { href: "detail.html" } }, [
-                      _vm._v("Black Blouse Versace")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "price" }, [_vm._v("$143.00")])
-                ])
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "container", attrs: { "data-animate": "fadeInUpBig" } },
-        [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c("div", { staticClass: "box slideshow" }, [
-              _c("h3", [_vm._v("Get Inspired")]),
-              _vm._v(" "),
-              _c("p", { staticClass: "lead" }, [
-                _vm._v("Get the inspiration from our world class designers")
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "owl-carousel owl-theme",
-                  attrs: { id: "get-inspired" }
-                },
-                [
-                  _c("div", { staticClass: "item" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("img", {
-                        staticClass: "img-responsive",
-                        attrs: {
-                          src: "img/getinspired1.jpg",
-                          alt: "Get inspired"
-                        }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "item" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("img", {
-                        staticClass: "img-responsive",
-                        attrs: {
-                          src: "img/getinspired2.jpg",
-                          alt: "Get inspired"
-                        }
-                      })
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "item" }, [
-                    _c("a", { attrs: { href: "#" } }, [
-                      _c("img", {
-                        staticClass: "img-responsive",
-                        attrs: {
-                          src: "img/getinspired3.jpg",
-                          alt: "Get inspired"
-                        }
-                      })
-                    ])
-                  ])
-                ]
-              )
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "box text-center",
-          attrs: { "data-animate": "fadeInUp" }
-        },
-        [
-          _c("div", { staticClass: "container" }, [
-            _c("div", { staticClass: "col-md-12" }, [
-              _c("h3", { staticClass: "text-uppercase" }, [
-                _vm._v("From our blog")
-              ]),
-              _vm._v(" "),
-              _c("p", { staticClass: "lead" }, [
-                _vm._v("What's new in the world of fashion? "),
-                _c("a", { attrs: { href: "blog.html" } }, [
-                  _vm._v("Check our blog!")
-                ])
-              ])
-            ])
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "container" }, [
-        _c(
-          "div",
-          { staticClass: "col-md-12", attrs: { "data-animate": "fadeInUp" } },
-          [
-            _c("div", { staticClass: "row", attrs: { id: "blog-homepage" } }, [
-              _c("div", { staticClass: "col-sm-6" }, [
-                _c("div", { staticClass: "post" }, [
-                  _c("h4", [
-                    _c("a", { attrs: { href: "post.html" } }, [
-                      _vm._v("Fashion now")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "author-category" }, [
-                    _vm._v("By "),
-                    _c("a", { attrs: { href: "#" } }, [_vm._v("John Slim")]),
-                    _vm._v(" in "),
-                    _c("a", { attrs: { href: "" } }, [
-                      _vm._v("Fashion and style")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("hr"),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "intro" }, [
-                    _vm._v(
-                      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n                            ultricies mi vitae est. Mauris placerat eleifend leo."
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "read-more" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-primary",
-                        attrs: { href: "post.html" }
-                      },
-                      [_vm._v("Continue reading")]
-                    )
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-sm-6" }, [
-                _c("div", { staticClass: "post" }, [
-                  _c("h4", [
-                    _c("a", { attrs: { href: "post.html" } }, [
-                      _vm._v("Who is who - example blog post")
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "author-category" }, [
-                    _vm._v("By "),
-                    _c("a", { attrs: { href: "#" } }, [_vm._v("John Slim")]),
-                    _vm._v(" in "),
-                    _c("a", { attrs: { href: "" } }, [_vm._v("About Minimal")])
-                  ]),
-                  _vm._v(" "),
-                  _c("hr"),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "intro" }, [
-                    _vm._v(
-                      "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n                            ultricies mi vitae est. Mauris placerat eleifend leo."
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "read-more" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "btn btn-primary",
-                        attrs: { href: "post.html" }
-                      },
-                      [_vm._v("Continue reading")]
-                    )
-                  ])
-                ])
-              ])
-            ])
-          ]
-        )
       ])
     ])
   }
@@ -62254,7 +61278,17 @@ var render = function() {
       "div",
       { staticClass: "container" },
       [
-        _vm._m(0),
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("ul", { staticClass: "breadcrumb" }, [
+            _c(
+              "li",
+              [_c("router-link", { attrs: { to: "/" } }, [_vm._v("Home")])],
+              1
+            ),
+            _vm._v(" "),
+            _c("li", [_vm._v("New account / Sign in")])
+          ])
+        ]),
         _vm._v(" "),
         _c("user-signup"),
         _vm._v(" "),
@@ -62264,20 +61298,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12" }, [
-      _c("ul", { staticClass: "breadcrumb" }, [
-        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Home")])]),
-        _vm._v(" "),
-        _c("li", [_vm._v("New account / Sign in")])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -62381,7 +61402,17 @@ var render = function() {
       "div",
       { staticClass: "container" },
       [
-        _vm._m(0),
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("ul", { staticClass: "breadcrumb" }, [
+            _c(
+              "li",
+              [_c("router-link", { attrs: { to: "/" } }, [_vm._v("Home")])],
+              1
+            ),
+            _vm._v(" "),
+            _c("li", [_vm._v("New account / Sign in")])
+          ])
+        ]),
         _vm._v(" "),
         _c("user-signup"),
         _vm._v(" "),
@@ -62391,20 +61422,7 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-12" }, [
-      _c("ul", { staticClass: "breadcrumb" }, [
-        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Home")])]),
-        _vm._v(" "),
-        _c("li", [_vm._v("New account / Sign in")])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -63755,45 +62773,71 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-	data: function data() {
-		return {
-			productType: '',
-			products: []
-		};
-	},
-	created: function created() {
-		this.loadProducts();
-	},
+    data: function data() {
+        return {
+            productType: '',
+            products: [],
+            responseMsg: '',
+            form: new Form({
+                status: 'cart',
+                name: '',
+                productid: null,
+                price: null,
+                discount: null
+            })
+        };
+    },
+    created: function created() {
+        this.loadProducts();
+    },
 
-	methods: {
-		getByType: function getByType() {
-			this.productType === 'All' ? this.loadProducts() : this.loadProductsByType();
-		},
-		loadProducts: function loadProducts() {
-			var _this = this;
+    methods: {
+        getByType: function getByType() {
+            this.productType === 'All' ? this.loadProducts() : this.loadProductsByType();
+        },
+        loadProducts: function loadProducts() {
+            var _this = this;
 
-			axios.get('products').then(function (response) {
-				return _this.products = response.data;
-			});
-		},
-		loadProductsByType: function loadProductsByType() {
-			var _this2 = this;
+            axios.get('products').then(function (response) {
+                return _this.products = response.data;
+            });
+        },
+        loadProductsByType: function loadProductsByType() {
+            var _this2 = this;
 
-			axios.get('products', {
-				params: {
-					type: this.productType
-				}
-			}).then(function (response) {
-				return _this2.products = response.data;
-			});
-		},
-		newprice: function newprice(product) {
-			return __WEBPACK_IMPORTED_MODULE_0__utilities_Calculations__["a" /* default */].newPrice(product);
-		}
-	}
+            axios.get('products', {
+                params: {
+                    type: this.productType
+                }
+            }).then(function (response) {
+                return _this2.products = response.data;
+            });
+        },
+        newprice: function newprice(product) {
+            return __WEBPACK_IMPORTED_MODULE_0__utilities_Calculations__["a" /* default */].newPrice(product);
+        },
+        addToCart: function addToCart(product) {
+            var _this3 = this;
+
+            this.loadForm(product.id, product.price, product.discount, product.name);
+            this.form.post('orders').then(function (response) {
+
+                var orderproduct = response.data.orderproduct;
+                _this3.responseMsg = orderproduct.quantity + " item(s) added to cart!";
+            });
+        },
+        loadForm: function loadForm(productid, price, discount, name) {
+
+            this.form.productid = productid;
+            this.form.price = price;
+            this.form.discount = discount;
+            this.form.name = name;
+        }
+    }
 });
 
 /***/ }),
@@ -63969,6 +63013,12 @@ var render = function() {
                       _vm._v("$" + _vm._s(_vm.newprice(product)))
                     ]),
                     _vm._v(" "),
+                    _vm.responseMsg != ""
+                      ? _c("p", { staticClass: "response-msg text-center" }, [
+                          _vm._v(_vm._s(_vm.responseMsg))
+                        ])
+                      : _vm._e(),
+                    _vm._v(" "),
                     _c(
                       "p",
                       { staticClass: "buttons" },
@@ -63987,7 +63037,21 @@ var render = function() {
                           [_vm._v("View detail")]
                         ),
                         _vm._v(" "),
-                        _vm._m(1, true)
+                        _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-primary",
+                            on: {
+                              click: function($event) {
+                                _vm.addToCart(product)
+                              }
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "fa fa-shopping-cart" }),
+                            _vm._v("Add to cart")
+                          ]
+                        )
                       ],
                       1
                     )
@@ -63999,7 +63063,7 @@ var render = function() {
           })
         ),
         _vm._v(" "),
-        _vm._m(2)
+        _vm._m(1)
       ])
     ])
   ])
@@ -64019,32 +63083,17 @@ var staticRenderFns = [
               _c("div", { staticClass: "products-number" }, [
                 _c("strong", [_vm._v("Show")]),
                 _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn btn-default btn-sm btn-primary",
-                    attrs: { href: "#" }
-                  },
-                  [_vm._v("12")]
-                ),
+                _c("a", { staticClass: "btn btn-default btn-sm btn-primary" }, [
+                  _vm._v("12")
+                ]),
                 _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn btn-default btn-sm",
-                    attrs: { href: "#" }
-                  },
-                  [_vm._v("24")]
-                ),
+                _c("a", { staticClass: "btn btn-default btn-sm" }, [
+                  _vm._v("24")
+                ]),
                 _vm._v(" "),
-                _c(
-                  "a",
-                  {
-                    staticClass: "btn btn-default btn-sm",
-                    attrs: { href: "#" }
-                  },
-                  [_vm._v("All")]
-                ),
+                _c("a", { staticClass: "btn btn-default btn-sm" }, [
+                  _vm._v("All")
+                ]),
                 _vm._v(" products\n                                        ")
               ])
             ]),
@@ -64075,41 +63124,30 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      { staticClass: "btn btn-primary", attrs: { href: "basket.html" } },
-      [_c("i", { staticClass: "fa fa-shopping-cart" }), _vm._v("Add to cart")]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "pages" }, [
       _c("p", { staticClass: "loadMore" }, [
-        _c(
-          "a",
-          { staticClass: "btn btn-primary btn-lg", attrs: { href: "#" } },
-          [_c("i", { staticClass: "fa fa-chevron-down" }), _vm._v(" Load more")]
-        )
+        _c("a", { staticClass: "btn btn-primary btn-lg" }, [
+          _c("i", { staticClass: "fa fa-chevron-down" }),
+          _vm._v(" Load more")
+        ])
       ]),
       _vm._v(" "),
       _c("ul", { staticClass: "pagination" }, [
-        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("«")])]),
+        _c("li", [_c("a", [_vm._v("«")])]),
         _vm._v(" "),
         _c("li", { staticClass: "active" }, [
           _c("a", { attrs: { href: "#" } }, [_vm._v("1")])
         ]),
         _vm._v(" "),
-        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("2")])]),
+        _c("li", [_c("a", [_vm._v("2")])]),
         _vm._v(" "),
-        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("3")])]),
+        _c("li", [_c("a", [_vm._v("3")])]),
         _vm._v(" "),
-        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("4")])]),
+        _c("li", [_c("a", [_vm._v("4")])]),
         _vm._v(" "),
-        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("5")])]),
+        _c("li", [_c("a", [_vm._v("5")])]),
         _vm._v(" "),
-        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("»")])])
+        _c("li", [_c("a", [_vm._v("»")])])
       ])
     ])
   }
@@ -64179,8 +63217,6 @@ module.exports = Component.exports
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utilities_Auth__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utilities_Calculations__ = __webpack_require__(3);
-//
-//
 //
 //
 //
@@ -64402,9 +63438,25 @@ var render = function() {
                       1
                     ),
                     _vm._v(" "),
-                    _vm._m(2),
+                    _c(
+                      "li",
+                      [
+                        _c("router-link", { attrs: { to: "/shop" } }, [
+                          _vm._v("DVD")
+                        ])
+                      ],
+                      1
+                    ),
                     _vm._v(" "),
-                    _vm._m(3)
+                    _c(
+                      "li",
+                      [
+                        _c("router-link", { attrs: { to: "/shop" } }, [
+                          _vm._v("BluRay")
+                        ])
+                      ],
+                      1
+                    )
                   ])
                 ])
               ]
@@ -64412,12 +63464,12 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _vm._m(4)
+        _vm._m(2)
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-9" }, [
         _c("div", { staticClass: "row", attrs: { id: "productMain" } }, [
-          _vm._m(5),
+          _vm._m(3),
           _vm._v(" "),
           _c("div", { staticClass: "col-sm-6" }, [
             _c("div", { staticClass: "box product-details" }, [
@@ -64433,7 +63485,7 @@ var render = function() {
                   ])
                 : _vm._e(),
               _vm._v(" "),
-              _vm._m(6),
+              _vm._m(4),
               _vm._v(" "),
               _vm.product.price
                 ? _c("p", [
@@ -64514,12 +63566,12 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
-                    _vm._m(7)
+                    _vm._m(5)
                   ])
                 : _vm._e()
             ]),
             _vm._v(" "),
-            _vm._m(8)
+            _vm._m(6)
           ])
         ]),
         _vm._v(" "),
@@ -64617,7 +63669,7 @@ var render = function() {
           _vm._v(" "),
           _c("hr"),
           _vm._v(" "),
-          _vm._m(9)
+          _vm._m(7)
         ])
       ])
     ])
@@ -64645,24 +63697,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { attrs: { href: "category.html" } }, [_vm._v("DVD")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("a", { attrs: { href: "category.html" } }, [_vm._v("BluRay")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", { staticClass: "banner" }, [
-      _c("a", { attrs: { href: "#" } }, [
+      _c("a", [
         _c("img", {
           staticClass: "img-responsive",
           attrs: { src: "img/banner.jpg", alt: "sales 2014" }
@@ -64709,11 +63745,10 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      { staticClass: "btn btn-default", attrs: { href: "basket.html" } },
-      [_c("i", { staticClass: "fa fa-heart" }), _vm._v(" Add to wishlist")]
-    )
+    return _c("a", { staticClass: "btn btn-default" }, [
+      _c("i", { staticClass: "fa fa-heart" }),
+      _vm._v(" Add to wishlist")
+    ])
   },
   function() {
     var _vm = this
@@ -64772,7 +63807,7 @@ var staticRenderFns = [
           "a",
           {
             staticClass: "external facebook",
-            attrs: { href: "#", "data-animate-hover": "pulse" }
+            attrs: { "data-animate-hover": "pulse" }
           },
           [_c("i", { staticClass: "fa fa-facebook" })]
         ),
@@ -64781,7 +63816,7 @@ var staticRenderFns = [
           "a",
           {
             staticClass: "external gplus",
-            attrs: { href: "#", "data-animate-hover": "pulse" }
+            attrs: { "data-animate-hover": "pulse" }
           },
           [_c("i", { staticClass: "fa fa-google-plus" })]
         ),
@@ -64790,17 +63825,14 @@ var staticRenderFns = [
           "a",
           {
             staticClass: "external twitter",
-            attrs: { href: "#", "data-animate-hover": "pulse" }
+            attrs: { "data-animate-hover": "pulse" }
           },
           [_c("i", { staticClass: "fa fa-twitter" })]
         ),
         _vm._v(" "),
         _c(
           "a",
-          {
-            staticClass: "email",
-            attrs: { href: "#", "data-animate-hover": "pulse" }
-          },
+          { staticClass: "email", attrs: { "data-animate-hover": "pulse" } },
           [_c("i", { staticClass: "fa fa-envelope" })]
         )
       ])
@@ -65281,7 +64313,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("td", [
-      _c("a", { attrs: { href: "#" } }, [
+      _c("a", [
         _c("img", {
           attrs: { src: "img/detailsquare.jpg", alt: "White Blouse Armani" }
         })
@@ -67304,9 +66336,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
 
 
 
@@ -67586,7 +66615,40 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm._m(0),
+    _c("div", { staticClass: "col-md-3" }, [
+      _c("div", { staticClass: "panel panel-default sidebar-menu" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "panel-body" }, [
+          _c("ul", { staticClass: "nav nav-pills nav-stacked" }, [
+            _c(
+              "li",
+              { staticClass: "active" },
+              [
+                _c("router-link", { attrs: { to: "/orderhistory" } }, [
+                  _c("i", { staticClass: "fa fa-list" }),
+                  _vm._v(" My orders")
+                ])
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _vm._m(1),
+            _vm._v(" "),
+            _c(
+              "li",
+              [
+                _c("router-link", { attrs: { to: "/myaccount" } }, [
+                  _c("i", { staticClass: "fa fa-user" }),
+                  _vm._v(" My account")
+                ])
+              ],
+              1
+            )
+          ])
+        ])
+      ])
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "col-md-9", attrs: { id: "customer-orders" } }, [
       _c("div", { staticClass: "box" }, [
@@ -67594,7 +66656,18 @@ var render = function() {
         _vm._v(" "),
         _c("p", { staticClass: "lead" }, [_vm._v("Your orders on one place.")]),
         _vm._v(" "),
-        _vm._m(1),
+        _c(
+          "p",
+          { staticClass: "text-muted" },
+          [
+            _vm._v("If you have any questions, please feel free to "),
+            _c("router-link", { attrs: { to: "/contact" } }, [
+              _vm._v("contact us")
+            ]),
+            _vm._v(", our customer service center is working for you 24/7.")
+          ],
+          1
+        ),
         _vm._v(" "),
         _c("hr"),
         _vm._v(" "),
@@ -67650,54 +66723,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-3" }, [
-      _c("div", { staticClass: "panel panel-default sidebar-menu" }, [
-        _c("div", { staticClass: "panel-heading" }, [
-          _c("h3", { staticClass: "panel-title" }, [_vm._v("Customer section")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "panel-body" }, [
-          _c("ul", { staticClass: "nav nav-pills nav-stacked" }, [
-            _c("li", { staticClass: "active" }, [
-              _c("a", { attrs: { href: "customer-orders.html" } }, [
-                _c("i", { staticClass: "fa fa-list" }),
-                _vm._v(" My orders")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "customer-wishlist.html" } }, [
-                _c("i", { staticClass: "fa fa-heart" }),
-                _vm._v(" My wishlist")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "customer-account.html" } }, [
-                _c("i", { staticClass: "fa fa-user" }),
-                _vm._v(" My account")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("li", [
-              _c("a", { attrs: { href: "index.html" } }, [
-                _c("i", { staticClass: "fa fa-sign-out" }),
-                _vm._v(" Logout")
-              ])
-            ])
-          ])
-        ])
-      ])
+    return _c("div", { staticClass: "panel-heading" }, [
+      _c("h3", { staticClass: "panel-title" }, [_vm._v("Customer section")])
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "text-muted" }, [
-      _vm._v("If you have any questions, please feel free to "),
-      _c("a", { attrs: { href: "contact.html" } }, [_vm._v("contact us")]),
-      _vm._v(", our customer service center is working for you 24/7.")
+    return _c("li", [
+      _c("a", [_c("i", { staticClass: "fa fa-heart" }), _vm._v(" My wishlist")])
     ])
   },
   function() {
@@ -67730,6 +66765,869 @@ if (false) {
 
 /***/ }),
 /* 206 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(207)
+/* template */
+var __vue_template__ = __webpack_require__(208)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/MyAccount.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-10dd023a", Component.options)
+  } else {
+    hotAPI.reload("data-v-10dd023a", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 207 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+/* 208 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { attrs: { id: "content" } }, [
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "col-md-3" }, [
+        _c("div", { staticClass: "panel panel-default sidebar-menu" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "panel-body" }, [
+            _c("ul", { staticClass: "nav nav-pills nav-stacked" }, [
+              _c(
+                "li",
+                { staticClass: "active" },
+                [
+                  _c("router-link", { attrs: { to: "/orderhistory" } }, [
+                    _c("i", { staticClass: "fa fa-list" }),
+                    _vm._v(" My orders")
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _vm._m(1),
+              _vm._v(" "),
+              _c(
+                "li",
+                [
+                  _c("router-link", { attrs: { to: "/myaccount" } }, [
+                    _c("i", { staticClass: "fa fa-user" }),
+                    _vm._v(" My account")
+                  ])
+                ],
+                1
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _vm._m(2)
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "panel-heading" }, [
+      _c("h3", { staticClass: "panel-title" }, [_vm._v("Customer section")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("a", [_c("i", { staticClass: "fa fa-heart" }), _vm._v(" My wishlist")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-9" }, [
+      _c("div", { staticClass: "box" }, [
+        _c("h1", [_vm._v("My account")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "lead" }, [
+          _vm._v("Change your personal details or your password here.")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "text-muted" }, [
+          _vm._v(
+            "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+          )
+        ]),
+        _vm._v(" "),
+        _c("h3", [_vm._v("Change password")]),
+        _vm._v(" "),
+        _c("form", [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-6" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "password_old" } }, [
+                  _vm._v("Old password")
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: { type: "password", id: "password_old" }
+                })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-6" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "password_1" } }, [
+                  _vm._v("New password")
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: { type: "password", id: "password_1" }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-6" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "password_2" } }, [
+                  _vm._v("Retype new password")
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: { type: "password", id: "password_2" }
+                })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-12 text-center" }, [
+            _c(
+              "button",
+              { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+              [
+                _c("i", { staticClass: "fa fa-save" }),
+                _vm._v(" Save new password")
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("hr"),
+        _vm._v(" "),
+        _c("h3", [_vm._v("Personal details")]),
+        _vm._v(" "),
+        _c("form", [
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-6" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "firstname" } }, [
+                  _vm._v("Firstname")
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: { type: "text", id: "firstname" }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-6" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "lastname" } }, [
+                  _vm._v("Lastname")
+                ]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: { type: "text", id: "lastname" }
+                })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-6" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "company" } }, [_vm._v("Company")]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: { type: "text", id: "company" }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-6" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "street" } }, [_vm._v("Street")]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: { type: "text", id: "street" }
+                })
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-sm-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "city" } }, [_vm._v("Company")]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: { type: "text", id: "city" }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "zip" } }, [_vm._v("ZIP")]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: { type: "text", id: "zip" }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "state" } }, [_vm._v("State")]),
+                _vm._v(" "),
+                _c("select", {
+                  staticClass: "form-control",
+                  attrs: { id: "state" }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-6 col-md-3" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "country" } }, [_vm._v("Country")]),
+                _vm._v(" "),
+                _c("select", {
+                  staticClass: "form-control",
+                  attrs: { id: "country" }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-6" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "phone" } }, [_vm._v("Telephone")]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: { type: "text", id: "phone" }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-6" }, [
+              _c("div", { staticClass: "form-group" }, [
+                _c("label", { attrs: { for: "email" } }, [_vm._v("Email")]),
+                _vm._v(" "),
+                _c("input", {
+                  staticClass: "form-control",
+                  attrs: { type: "text", id: "email" }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-12 text-center" }, [
+              _c(
+                "button",
+                { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+                [
+                  _c("i", { staticClass: "fa fa-save" }),
+                  _vm._v(" Save changes")
+                ]
+              )
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-10dd023a", module.exports)
+  }
+}
+
+/***/ }),
+/* 209 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(1)
+/* script */
+var __vue_script__ = __webpack_require__(210)
+/* template */
+var __vue_template__ = __webpack_require__(211)
+/* template functional */
+  var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Contact.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-43b63039", Component.options)
+  } else {
+    hotAPI.reload("data-v-43b63039", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 210 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+/* 211 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { id: "content" } }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "box", attrs: { id: "contact" } }, [
+            _c("h1", [_vm._v("Contact")]),
+            _vm._v(" "),
+            _c("p", { staticClass: "lead" }, [
+              _vm._v(
+                "Are you curious about something? Do you have some kind of problem with our products?"
+              )
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _vm._v(
+                "Please feel free to contact us, our customer service center is working for you 24/7."
+              )
+            ]),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-sm-4" }, [
+                _c("h3", [
+                  _c("i", { staticClass: "fa fa-map-marker" }),
+                  _vm._v(" Address")
+                ]),
+                _vm._v(" "),
+                _c("p", [
+                  _vm._v("13/25 New Avenue\n                                "),
+                  _c("br"),
+                  _vm._v("New Heaven\n                                "),
+                  _c("br"),
+                  _vm._v("45Y 73J\n                                "),
+                  _c("br"),
+                  _vm._v("England\n                                "),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("strong", [_vm._v("Great Britain")])
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-sm-4" }, [
+                _c("h3", [
+                  _c("i", { staticClass: "fa fa-phone" }),
+                  _vm._v(" Call center")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-muted" }, [
+                  _vm._v(
+                    "This number is toll free if calling from Great Britain otherwise we advise you to use the electronic form of communication."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("p", [_c("strong", [_vm._v("+33 555 444 333")])])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-sm-4" }, [
+                _c("h3", [
+                  _c("i", { staticClass: "fa fa-envelope" }),
+                  _vm._v(" Electronic support")
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-muted" }, [
+                  _vm._v(
+                    "Please feel free to write an email to us or to use our electronic ticketing system."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("ul", [
+                  _c("li", [
+                    _c("strong", [_c("a", [_vm._v("info@fakeemail.com")])])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("strong", [_c("a", [_vm._v("Ticketio")])]),
+                    _vm._v(" - our ticketing support platform")
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _c("div", { attrs: { id: "map" } }, [
+              _c("iframe", {
+                staticStyle: { border: "0" },
+                attrs: {
+                  src:
+                    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3334.4511479353687!2d-111.92149128492817!3d33.30701908081513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b06cdd50c43c7%3A0x7d3e9c66bdb7f8a2!2s251+Desert+Breeze+Blvd+W%2C+Chandler%2C+AZ+85226!5e0!3m2!1sen!2sus!4v1498079645378",
+                  width: "100%",
+                  height: "400",
+                  frameborder: "0",
+                  allowfullscreen: ""
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("hr"),
+            _vm._v(" "),
+            _c("h2", [_vm._v("Contact form")]),
+            _vm._v(" "),
+            _c("form", [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-sm-6" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "firstname" } }, [
+                      _vm._v("Firstname")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { type: "text", id: "firstname" }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-sm-6" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "lastname" } }, [
+                      _vm._v("Lastname")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { type: "text", id: "lastname" }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-sm-6" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "email" } }, [_vm._v("Email")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { type: "text", id: "email" }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-sm-6" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "subject" } }, [
+                      _vm._v("Subject")
+                    ]),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { type: "text", id: "subject" }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-sm-12" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "message" } }, [
+                      _vm._v("Message")
+                    ]),
+                    _vm._v(" "),
+                    _c("textarea", {
+                      staticClass: "form-control",
+                      attrs: { id: "message" }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-sm-12 text-center" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      attrs: { type: "submit" }
+                    },
+                    [
+                      _c("i", { staticClass: "fa fa-envelope-o" }),
+                      _vm._v(" Send message")
+                    ]
+                  )
+                ])
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-43b63039", module.exports)
+  }
+}
+
+/***/ }),
+/* 212 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

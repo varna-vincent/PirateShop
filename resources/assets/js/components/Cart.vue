@@ -20,7 +20,7 @@
                                 <tbody>
                                     <tr v-for="(order, index) in orders">
                                         <td>
-                                            <a href="#"><img src="img/detailsquare.jpg" alt="White Blouse Armani"></a>
+                                            <a><img src="img/detailsquare.jpg" alt="White Blouse Armani"></a>
                                         </td>
                                         <td><router-link :to="{ name: 'product', params: { id: order.product_id }}">{{ order.name }}</router-link>
                                         </td>
@@ -103,7 +103,7 @@
                     </div>
                 </div> <!-- /.col-md-3 -->
             </div> <!-- /.container -->
-        </div> <!-- /#content -->
+        </div>
 </template>
 <script>
     import auth from '../utilities/Auth';

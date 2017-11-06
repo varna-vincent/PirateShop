@@ -25,7 +25,8 @@
                                         <td><router-link :to="{ name: 'product', params: { id: order.product_id }}">{{ order.name }}</router-link>
                                         </td>
                                         <td>
-                                            <input type="number" :value="order.quantity" class="form-control">
+                                            {{ order.quantity }}
+                                            <!--<input type="number" :value="order.quantity" class="form-control">-->
                                         </td>
                                         <td>${{ order.price }}</td>
                                         <td>${{ order.discount }}</td>

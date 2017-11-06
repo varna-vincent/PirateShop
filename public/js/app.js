@@ -4806,7 +4806,7 @@ module.exports = {
 		return parseInt(product.quantity) * this.newPrice(product);
 	},
 	discount100: function discount100(totalitems, totalamount) {
-		return (totalitems > 4 ? totalamount * 5 / 100 : 0).toFixed(2);
+		return (totalitems > 100 ? totalamount * 5 / 100 : 0).toFixed(2);
 	},
 	netamount: function netamount(amount, discount) {
 		return (parseFloat(amount) - parseFloat(discount)).toFixed(2);
@@ -64017,6 +64017,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -64157,11 +64158,11 @@ var render = function() {
                         ),
                         _vm._v(" "),
                         _c("td", [
-                          _c("input", {
-                            staticClass: "form-control",
-                            attrs: { type: "number" },
-                            domProps: { value: order.quantity }
-                          })
+                          _vm._v(
+                            "\n                                            " +
+                              _vm._s(order.quantity) +
+                              "\n                                            "
+                          )
                         ]),
                         _vm._v(" "),
                         _c("td", [_vm._v("$" + _vm._s(order.price))]),

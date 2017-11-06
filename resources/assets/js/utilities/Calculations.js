@@ -10,7 +10,7 @@ export default {
 		return parseInt(product.quantity) * this.newPrice(product);
 	},
     discount100(totalitems, totalamount) {
-        return ((totalitems > 4) ? totalamount * 5 / 100 : 0).toFixed(2);
+        return ((totalitems > 100) ? totalamount * 5 / 100 : 0).toFixed(2);
     },
     netamount(amount, discount) {
         return (parseFloat(amount) - parseFloat(discount)).toFixed(2);

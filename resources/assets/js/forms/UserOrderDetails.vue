@@ -16,23 +16,32 @@
                 <div class="content">
                     <div class="row">
                         <div class="col-sm-6">
-                            <div class="form-group">
+                            <div :class="[form.errors.has('name') ? 'has-error' : '', 'form-group']">
                                 <label for="name">Name</label>
                                 <input type="text" class="form-control" v-model="form.name" id="name" required>
+                                <span class="help-block" v-if="form.errors.has('name')">
+                                    <strong>{{ form.errors.get('name') }}</strong>
+                                </span>
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <div class="form-group">
+                            <div :class="[form.errors.has('phone') ? 'has-error' : '', 'form-group']">
                                 <label for="phone">Telephone</label>
                                 <input type="text" class="form-control" v-model="form.phone" id="phone" required>
+                                <span class="help-block" v-if="form.errors.has('phone')">
+                                    <strong>{{ form.errors.get('phone') }}</strong>
+                                </span>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
-                            <div class="form-group">
+                            <div :class="[form.errors.has('address1') ? 'has-error' : '', 'form-group']">
                                 <label for="address1">Address Line 1</label>
                                 <input type="text" class="form-control" v-model="form.address1" id="address1" required>
+                                <span class="help-block" v-if="form.errors.has('address1')">
+                                    <strong>{{ form.errors.get('address1') }}</strong>
+                                </span>
                             </div>
                         </div>
                         <div class="col-sm-6">
@@ -44,19 +53,25 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-md-3">
-                            <div class="form-group">
+                            <div :class="[form.errors.has('city') ? 'has-error' : '', 'form-group']">
                                 <label for="city">City</label>
                                 <input type="text" class="form-control" v-model="form.city" id="city" required>
+                                <span class="help-block" v-if="form.errors.has('city')">
+                                    <strong>{{ form.errors.get('city') }}</strong>
+                                </span>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-3">
-                            <div class="form-group">
+                            <div :class="[form.errors.has('zip') ? 'has-error' : '', 'form-group']">
                                 <label for="zip">ZIP</label>
                                 <input type="text" class="form-control" v-model="form.zip" id="zip" required>
+                                <span class="help-block" v-if="form.errors.has('zip')">
+                                    <strong>{{ form.errors.get('zip') }}</strong>
+                                </span>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-3">
-                            <div class="form-group">
+                            <div :class="[form.errors.has('state') ? 'has-error' : '', 'form-group']">
                                 <label for="state">State</label>
                                 <select class="form-control" v-model="form.state" id="state" required>
                                 	<option disabled>Select one</option>
@@ -64,6 +79,9 @@
                                 	<option value="TX">Texas</option>
                                 	<option value="FL">Florida</option>
                                 </select>
+                                <span class="help-block" v-if="form.errors.has('state')">
+                                    <strong>{{ form.errors.get('state') }}</strong>
+                                </span>
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-3">
